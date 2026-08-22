@@ -87,6 +87,115 @@
 
   document.querySelectorAll("[data-flipbook]").forEach(initFlipbook);
 
+  const LEGAL_DOCS = {
+    privacy: {
+      url: "privacy.html",
+      title: "Политика конфиденциальности",
+    },
+    offer: {
+      url: "offer.html",
+      title: "Договор публичной оферты",
+    },
+  };
+
+  const consentRoot = document.querySelector("[data-tariff-consent]");
+  const payButtons = document.querySelectorAll("[data-pay-open]");
+  const consentInputs = () => Array.from(document.querySelectorAll("[data-consent]"));
+  const legalModal = document.getElementById("legal-modal");
+  let activeLegalKey = "";
+
+  const hasLegalConsent = () => {
+    const inputs = consentInputs();
+    return inputs.length > 0 && inputs.every((input) => input.checked);
+  };
+
+  const syncPayButtons = () => {
+    const ok = hasLegalConsent();
+    payButtons.forEach((btn) => {
+      btn.disabled = !ok;
+      btn.setAttribute("aria-disabled", ok ? "false" : "true");
+      btn.classList.toggle("is-locked", !ok);
+    });
+    document.querySelectorAll("[data-pay-blocker]").forEach((el) => {
+      el.hidden = ok;
+    });
+  };
+
+  const highlightConsent = () => {
+    if (!consentRoot) return;
+    consentRoot.classList.add("is-attention");
+    consentRoot.scrollIntoView({ behavior: "smooth", block: "center" });
+    window.setTimeout(() => consentRoot.classList.remove("is-attention"), 1600);
+  };
+
+  const closeLegal = () => {
+    if (!legalModal) return;
+    legalModal.hidden = true;
+    activeLegalKey = "";
+    if (!document.getElementById("pay-modal") || document.getElementById("pay-modal").hidden) {
+      document.body.style.overflow = "";
+    }
+  };
+
+  const openLegal = async (key) => {
+    const doc = LEGAL_DOCS[key];
+    if (!doc || !legalModal) return;
+
+    activeLegalKey = key;
+    const title = legalModal.querySelector("#legal-title");
+    const body = legalModal.querySelector("[data-legal-body]");
+    if (title) title.textContent = doc.title;
+    if (body) body.innerHTML = "<p>Загружаем документ…</p>";
+
+    legalModal.hidden = false;
+    document.body.style.overflow = "hidden";
+
+    try {
+      const res = await fetch(doc.url);
+      if (!res.ok) throw new Error("fetch failed");
+      const html = await res.text();
+      const parsed = new DOMParser().parseFromString(html, "text/html");
+      const content = parsed.querySelector(".legal-doc");
+      if (body) body.innerHTML = content ? content.outerHTML : html;
+    } catch (err) {
+      closeLegal();
+      window.open(doc.url, "_blank", "noopener");
+    }
+  };
+
+  consentInputs().forEach((input) => {
+    input.addEventListener("change", syncPayButtons);
+  });
+
+  document.querySelectorAll("[data-legal-open]").forEach((btn) => {
+    btn.addEventListener("click", () => openLegal(btn.getAttribute("data-legal-open") || ""));
+  });
+
+  document.querySelectorAll("[data-legal-close]").forEach((el) => {
+    el.addEventListener("click", closeLegal);
+  });
+
+  legalModal?.querySelector("[data-legal-accept]")?.addEventListener("click", () => {
+    const input = document.querySelector(`[data-consent="${activeLegalKey}"]`);
+    if (input) {
+      input.checked = true;
+      syncPayButtons();
+    }
+    closeLegal();
+  });
+
+  document.querySelectorAll("[data-pay-blocker]").forEach((el) => {
+    el.addEventListener("click", highlightConsent);
+  });
+
+  syncPayButtons();
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && legalModal && !legalModal.hidden) {
+      closeLegal();
+    }
+  });
+
   const PAYMENT = {
     phone: "79173541792",
     phoneDisplay: "+7 917 354-17-92",
@@ -141,6 +250,10 @@
     };
 
     const openPay = (btn) => {
+      if (!hasLegalConsent()) {
+        highlightConsent();
+        return;
+      }
       state.tariff = btn.getAttribute("data-tariff") || "";
       state.title = btn.getAttribute("data-title") || "Тариф";
       state.price = Number(btn.getAttribute("data-price")) || 0;
@@ -257,7 +370,7 @@
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !payModal.hidden) closePay();
+      if (event.key === "Escape" && !payModal.hidden && (!legalModal || legalModal.hidden)) closePay();
     });
   }
 

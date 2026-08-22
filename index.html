@@ -609,7 +609,10 @@
               </li>
             </ul>
             <p class="tariff-card-price">1 ₽</p>
-            <button class="tariff-card-btn" type="button" data-pay-open data-tariff="self" data-title="Самостоятельный" data-price="1">Выбрать формат</button>
+            <div class="tariff-pay-wrap">
+              <button class="tariff-card-btn is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="self" data-title="Самостоятельный" data-price="1">Выбрать формат</button>
+              <span class="tariff-pay-blocker" data-pay-blocker aria-hidden="true"></span>
+            </div>
           </article>
 
           <article class="tariff-card tariff-card-popular">
@@ -638,7 +641,10 @@
               </li>
             </ul>
             <p class="tariff-card-price">2 ₽</p>
-            <button class="tariff-card-btn tariff-card-btn-strong" type="button" data-pay-open data-tariff="support" data-title="С сопровождением" data-price="2">Выбрать формат</button>
+            <div class="tariff-pay-wrap">
+              <button class="tariff-card-btn tariff-card-btn-strong is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="support" data-title="С сопровождением" data-price="2">Выбрать формат</button>
+              <span class="tariff-pay-blocker" data-pay-blocker aria-hidden="true"></span>
+            </div>
           </article>
 
           <article class="tariff-card tariff-card-vip">
@@ -674,8 +680,29 @@
               </li>
             </ul>
             <p class="tariff-card-price">3 ₽</p>
-            <button class="tariff-card-btn" type="button" data-pay-open data-tariff="vip" data-title="VIP" data-price="3">Выбрать формат</button>
+            <div class="tariff-pay-wrap">
+              <button class="tariff-card-btn is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="vip" data-title="VIP" data-price="3">Выбрать формат</button>
+              <span class="tariff-pay-blocker" data-pay-blocker aria-hidden="true"></span>
+            </div>
           </article>
+        </div>
+
+        <div class="tariff-consent reveal" data-tariff-consent>
+          <p class="tariff-consent-title">Перед оплатой подтвердите согласие с документами</p>
+          <div class="consent-item">
+            <label class="consent-check">
+              <input type="checkbox" data-consent="privacy" />
+              <span>Я согласен с политикой конфиденциальности</span>
+            </label>
+            <button class="consent-link" type="button" data-legal-open="privacy">Читать</button>
+          </div>
+          <div class="consent-item">
+            <label class="consent-check">
+              <input type="checkbox" data-consent="offer" />
+              <span>Я согласен с договором публичной оферты</span>
+            </label>
+            <button class="consent-link" type="button" data-legal-open="offer">Читать</button>
+          </div>
         </div>
       </div>
     </section>
@@ -855,10 +882,38 @@
     </div>
   </div>
 
+  <div class="legal-modal" id="legal-modal" hidden>
+    <div class="legal-modal-backdrop" data-legal-close tabindex="-1"></div>
+    <div class="legal-dialog" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+      <button class="pay-close" type="button" data-legal-close aria-label="Закрыть">×</button>
+      <h3 id="legal-title"></h3>
+      <div class="legal-modal-body" data-legal-body></div>
+      <button class="btn btn-primary legal-accept" type="button" data-legal-accept>Я согласен</button>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Галина Тюлис · Карта психосоматики тела</p>
-      <p class="footer-note">Курс не заменяет медицинскую диагностику и лечение.</p>
+      <div class="footer-col">
+        <p class="footer-brand">Карта психосоматики тела</p>
+        <p>© <span id="year"></span> Галина Тюлис</p>
+        <p class="footer-note">Курс не заменяет медицинскую диагностику и лечение.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-label">Реквизиты</p>
+        <p>ИП Тюлис Галина Геннадьевна</p>
+        <p>ИНН 027306585017</p>
+        <p>ОГРНИП 307027335800034</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-label">Контакты</p>
+        <p>Почта: <a href="mailto:yadarika@mail.ru">yadarika@mail.ru</a></p>
+        <p>Телефон: <a href="tel:+79173541792">+7 917 354-17-92</a></p>
+        <p class="footer-docs">
+          <a href="privacy.html">Политика конфиденциальности</a>
+          <a href="offer.html">Договор публичной оферты</a>
+        </p>
+      </div>
     </div>
   </footer>
 
