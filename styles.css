@@ -635,21 +635,26 @@ ul, ol {
   text-align: center;
 }
 
-/* Quote — full-width image, no crop, no side bars */
+/* Quote — one viewport, whole image visible */
 .quote-section {
   margin: 0;
   padding: 0;
   width: 100%;
-  max-width: 100%;
-  line-height: 0;
-  background-color: #edd4b8;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #e8c49c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .quote-section img {
   display: block;
   width: 100%;
-  max-width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
 }
 
 /* Recognize */
@@ -732,11 +737,11 @@ ul, ol {
 }
 
 .why-figure img {
-  width: min(360px, 100%);
+  width: min(440px, 100%);
   height: auto;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 16px 28px rgba(42, 24, 20, 0.12));
+  filter: drop-shadow(0 18px 32px rgba(42, 24, 20, 0.14));
 }
 
 .split {
@@ -2233,9 +2238,15 @@ ul, ol {
     margin-left: 0;
   }
 
+  .quote-section {
+    height: auto;
+    min-height: 0;
+  }
+
   .quote-section img {
     width: 100%;
     height: auto;
+    object-fit: contain;
   }
 
   .signal-list {
@@ -2424,5 +2435,56 @@ ul, ol {
     max-width: 70%;
     white-space: normal;
     line-height: 1.2;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: calc(var(--header-h) + 1.1rem) 1rem 2.75rem;
+  }
+
+  .brand-title {
+    font-size: clamp(2rem, 9vw, 2.7rem);
+  }
+
+  .hero-lead {
+    font-size: 1.02rem;
+  }
+
+  .container {
+    width: min(1120px, calc(100% - 1.5rem));
+  }
+
+  .section {
+    padding: 3.25rem 0;
+  }
+
+  .problem-title {
+    max-width: none;
+    font-size: clamp(1.65rem, 8vw, 2.15rem);
+  }
+
+  .cycle {
+    width: min(300px, 82vw);
+    height: min(300px, 82vw);
+    padding: 0 28px;
+  }
+
+  .why-figure img {
+    width: min(300px, 86vw);
+  }
+
+  .author-photo {
+    max-width: 280px;
+    margin-inline: auto;
+  }
+
+  .hero .btn,
+  .final .btn,
+  .tariff-card .btn {
+    width: 100%;
+  }
+
+  .header-inner {
+    width: calc(100% - 1.25rem);
   }
 }
