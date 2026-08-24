@@ -282,7 +282,7 @@ ul, ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: 78% 18%;
   image-rendering: auto;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -405,19 +405,14 @@ ul, ol {
   overflow: visible;
 }
 
-/* Основной контейнер круга */
-/* Основной контейнер круга */
 .cycle {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
-    /* Создаем три идеальные вертикальные колонки для левого текста, центра и правого текста */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 45px; /* Этот отступ идеально прижмет боковой текст к вашим уменьшенным стрелочкам */
-    box-sizing: border-box;
+  position: relative;
+  width: min(400px, 100%);
+  aspect-ratio: 1 / 1;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .cycle-disc {
@@ -458,9 +453,8 @@ ul, ol {
     width: 100px; /* Фиксируем одинаковую ширину для всех трех блоков */
 }
 
-/* Растаскиваем их по краям и центру маленького круга */
 .cycle-9 {
-    left: 35px; /* Левый блок садится на свое место */
+    left: 8%;
     font-size: 14px;
     font-weight: 600;
 }
@@ -477,7 +471,7 @@ ul, ol {
 }
 
 .cycle-3 {
-    right: 35px; /* Правый блок садится на свое место */
+    right: 8%;
     font-size: 14px;
     font-weight: 600;
 }
@@ -493,11 +487,11 @@ ul, ol {
 }
 
 .cycle-12 {
-    top: 55px; /* Опускаем внутрь верхнего просвета стрелок */
+    top: 13%;
 }
 
 .cycle-6 {
-    bottom: 55px; /* Поднимаем внутрь нижнего просвета стрелок */
+    bottom: 13%;
 }
 
 
@@ -2229,9 +2223,14 @@ ul, ol {
     left: 1.25rem;
   }
 
+  .hero-image {
+    object-position: 88% 12%;
+  }
+
   .hero-wash {
     background:
-      linear-gradient(180deg, rgba(254, 244, 240, 0.55) 0%, rgba(247, 221, 206, 0.45) 45%, rgba(254, 244, 240, 0.78) 100%);
+      linear-gradient(105deg, rgba(254, 244, 240, 0.82) 0%, rgba(254, 244, 240, 0.28) 46%, rgba(254, 244, 240, 0.06) 100%),
+      linear-gradient(180deg, rgba(254, 244, 240, 0.08) 0%, transparent 36%, rgba(254, 244, 240, 0.78) 100%);
   }
 
   .hero-content {
@@ -2284,16 +2283,34 @@ ul, ol {
   }
 
   .cycle {
-    width: min(400px, 70vw);
-    height: min(400px, 70vw);
+    width: min(400px, calc(100vw - 2.5rem));
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .cycle-3,
+  .cycle-9 {
+    width: 28%;
+    font-size: clamp(11px, 3.2vw, 14px);
   }
 
   .cycle-3 {
-    right: -95px;
+    right: 7%;
   }
 
   .cycle-9 {
-    left: -95px;
+    left: 7%;
+  }
+
+  .cycle-12,
+  .cycle-6 {
+    width: 34%;
+    font-size: clamp(11px, 3.2vw, 14px);
+  }
+
+  .cycle-center {
+    width: 26%;
+    font-size: clamp(13px, 3.6vw, 16px);
   }
 
   .why-layout {
@@ -2306,13 +2323,42 @@ ul, ol {
     margin-inline: auto;
   }
 
-  .workbook-layout,
-  .map-layout {
+  .workbook-layout {
     grid-template-columns: 1fr;
   }
 
+  .map-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: 0.2rem 0.45rem;
+    align-items: center;
+  }
+
   .map-text {
-    order: -1;
+    order: 0;
+    z-index: 2;
+    padding: 0.55rem 0.45rem;
+    background: rgba(254, 244, 240, 0.88);
+    border-radius: 12px;
+  }
+
+  .map-text h2 {
+    font-size: clamp(1.05rem, 4.4vw, 1.7rem);
+    margin-bottom: 0.45rem;
+  }
+
+  .map-text p {
+    font-size: clamp(0.74rem, 2.6vw, 0.95rem);
+    line-height: 1.4;
+  }
+
+  .map-side-left,
+  .map-side-right {
+    transform: none;
+  }
+
+  .map-side img {
+    max-height: min(52vh, 480px);
+    margin-inline: auto;
   }
 
   .flipbook {
@@ -2425,6 +2471,41 @@ ul, ol {
   }
 }
 
+@media (max-width: 700px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: 100svh;
+    padding: var(--header-h) 0 2.4rem;
+  }
+
+  .hero-bg {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: min(54svh, 460px);
+    flex-shrink: 0;
+  }
+
+  .hero-image {
+    object-position: 90% 8%;
+  }
+
+  .hero-wash {
+    background: linear-gradient(180deg, rgba(254, 244, 240, 0.18) 0%, rgba(254, 244, 240, 0.04) 48%, rgba(254, 244, 240, 0.96) 100%);
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0.35rem 1.1rem 0;
+    background: var(--cream);
+  }
+}
+
 @media (max-width: 600px) {
   .signal-list {
     grid-template-columns: 1fr;
@@ -2435,11 +2516,6 @@ ul, ol {
     max-width: 70%;
     white-space: normal;
     line-height: 1.2;
-  }
-
-  .hero {
-    min-height: 100svh;
-    padding: calc(var(--header-h) + 1.1rem) 1rem 2.75rem;
   }
 
   .brand-title {
@@ -2464,9 +2540,18 @@ ul, ol {
   }
 
   .cycle {
-    width: min(300px, 82vw);
-    height: min(300px, 82vw);
-    padding: 0 28px;
+    width: min(340px, calc(100vw - 1.5rem));
+    height: auto;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+  }
+
+  .map-layout {
+    gap: 0.15rem 0.3rem;
+  }
+
+  .map-text {
+    padding: 0.45rem 0.35rem;
   }
 
   .why-figure img {
