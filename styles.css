@@ -652,15 +652,36 @@ ul, ol {
 }
 
 /* Recognize */
+.signals-slider {
+  position: relative;
+}
+
 .signal-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 1.35rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0.35rem 0.15rem 1.15rem;
   background: transparent;
   border: 0;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+.signal-list::-webkit-scrollbar {
+  height: 6px;
+}
+
+.signal-list::-webkit-scrollbar-thumb {
+  background: rgba(154, 107, 82, 0.35);
+  border-radius: 99px;
 }
 
 .signal-list li {
+  flex: 0 0 min(260px, 78vw);
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -1395,6 +1416,14 @@ ul, ol {
   font-weight: 500;
   color: var(--ink);
   line-height: 1.15;
+}
+
+.tariff-card-lead {
+  margin: -0.45rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .tariff-features {
@@ -2248,10 +2277,6 @@ ul, ol {
     object-fit: contain;
   }
 
-  .signal-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .included-list {
     grid-template-columns: 1fr;
   }
@@ -2507,10 +2532,6 @@ ul, ol {
 }
 
 @media (max-width: 600px) {
-  .signal-list {
-    grid-template-columns: 1fr;
-  }
-
   .logo {
     font-size: 0.95rem;
     max-width: 70%;

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="stylesheet" href="styles.css?v=12" />
 </head>
 <body>
   <header class="site-header" id="top">
@@ -111,44 +111,50 @@
         <div class="section-head reveal">
           <h2>Возможно, вы узнаете себя</h2>
         </div>
-        <ul class="signal-list reveal-stagger">
-          <li>
-            <img src="картинки/4 экран/хроническая усталость.jpg" alt="" loading="lazy" decoding="async" />
-            <span>Хроническая усталость</span>
-          </li>
-          <li>
-            <img src="картинки/4 экран/тревожность.jpg" alt="" loading="lazy" decoding="async" />
-            <span>Тревожность</span>
-          </li>
-          <li>
-            <img src="картинки/4 экран/аллергия.jpg" alt="" loading="lazy" decoding="async" />
-            <span>Аллергия</span>
-          </li>
-          <li>
-            <img src="картинки/4 экран/лишний вес.jpg" alt="" loading="lazy" decoding="async" />
-            <span>Лишний вес</span>
-          </li>
-          <li>
-            <img src="картинки/4 экран/боли.jpg" alt="" loading="lazy" decoding="async" />
-            <span>Боли</span>
-          </li>
-          <li>
-            <img src="картинки/4 экран/проблемы ЖКТ.jpg" alt="" loading="lazy" decoding="async" />
-            <span>Проблемы ЖКТ</span>
-          </li>
-          <li>
-            <img src="картинки/4 экран/кожные заболевания.jpg" alt="" loading="lazy" decoding="async" />
-            <span>Кожные заболевания</span>
-          </li>
-          <li>
-            <img src="картинки/4 экран/болезни возвращаются.jpg" alt="" loading="lazy" decoding="async" />
-            <span>Болезни возвращаются</span>
-          </li>
-          <li>
-            <img src="картинки/4 экран/постоянный стресс.jpg" alt="" loading="lazy" decoding="async" />
-            <span>Постоянный стресс</span>
-          </li>
-        </ul>
+        <div class="signals-slider reveal" data-h-slider>
+          <ul class="signal-list" data-h-track>
+            <li>
+              <img src="картинки/4 экран/хроническая усталость.jpg" alt="" loading="lazy" decoding="async" />
+              <span>Хроническая усталость</span>
+            </li>
+            <li>
+              <img src="картинки/4 экран/тревожность.jpg" alt="" loading="lazy" decoding="async" />
+              <span>Тревожность</span>
+            </li>
+            <li>
+              <img src="картинки/4 экран/аллергия.jpg" alt="" loading="lazy" decoding="async" />
+              <span>Аллергия</span>
+            </li>
+            <li>
+              <img src="картинки/4 экран/лишний вес.jpg" alt="" loading="lazy" decoding="async" />
+              <span>Лишний вес</span>
+            </li>
+            <li>
+              <img src="картинки/4 экран/боли.jpg" alt="" loading="lazy" decoding="async" />
+              <span>Боли</span>
+            </li>
+            <li>
+              <img src="картинки/4 экран/проблемы ЖКТ.jpg" alt="" loading="lazy" decoding="async" />
+              <span>Проблемы ЖКТ</span>
+            </li>
+            <li>
+              <img src="картинки/4 экран/кожные заболевания.jpg" alt="" loading="lazy" decoding="async" />
+              <span>Кожные заболевания</span>
+            </li>
+            <li>
+              <img src="картинки/4 экран/болезни возвращаются.jpg" alt="" loading="lazy" decoding="async" />
+              <span>Болезни возвращаются</span>
+            </li>
+            <li>
+              <img src="картинки/4 экран/постоянный стресс.jpg" alt="" loading="lazy" decoding="async" />
+              <span>Постоянный стресс</span>
+            </li>
+          </ul>
+          <div class="reviews-nav">
+            <button type="button" class="reviews-btn" data-h-prev aria-label="Предыдущая карточка">‹</button>
+            <button type="button" class="reviews-btn" data-h-next aria-label="Следующая карточка">›</button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -520,8 +526,8 @@
           <h2>Отзывы</h2>
           <p>Слова тех, кто уже прошёл путь внимательного знакомства с собой.</p>
         </div>
-        <div class="reviews-slider reveal" data-reviews-slider>
-          <div class="reviews-track">
+        <div class="reviews-slider reveal" data-h-slider>
+          <div class="reviews-track" data-h-track>
             <figure class="review-card">
               <span class="review-quote-mark" aria-hidden="true">«</span>
               <blockquote>Я наконец перестала воевать с симптомами и начала слышать, о чём говорит тело. Курс дал спокойную опору рядом с лечением.</blockquote>
@@ -544,8 +550,8 @@
             </figure>
           </div>
           <div class="reviews-nav">
-            <button type="button" class="reviews-btn" data-reviews-prev aria-label="Предыдущий отзыв">‹</button>
-            <button type="button" class="reviews-btn" data-reviews-next aria-label="Следующий отзыв">›</button>
+            <button type="button" class="reviews-btn" data-h-prev aria-label="Предыдущий отзыв">‹</button>
+            <button type="button" class="reviews-btn" data-h-next aria-label="Следующий отзыв">›</button>
           </div>
         </div>
       </div>
@@ -589,6 +595,7 @@
         <div class="tariff-grid reveal" id="tariff-cards">
           <article class="tariff-card">
             <h3 class="tariff-card-title">Самостоятельный</h3>
+            <p class="tariff-card-lead">Для тех, кто готов идти в своём темпе</p>
             <ul class="tariff-features">
               <li>
                 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -603,9 +610,9 @@
                 <span>Общий чат</span>
               </li>
             </ul>
-            <p class="tariff-card-price">1 ₽</p>
+            <p class="tariff-card-price">7 900 ₽</p>
             <div class="tariff-pay-wrap">
-              <button class="tariff-card-btn is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="self" data-title="Самостоятельный" data-price="1">Выбрать формат</button>
+              <button class="tariff-card-btn is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="self" data-title="Самостоятельный" data-price="7900">Выбрать формат</button>
               <span class="tariff-pay-blocker" data-pay-blocker aria-hidden="true"></span>
             </div>
           </article>
@@ -613,6 +620,7 @@
           <article class="tariff-card tariff-card-popular">
             <span class="tariff-badge">Популярный выбор</span>
             <h3 class="tariff-card-title">С сопровождением</h3>
+            <p class="tariff-card-lead">Для тех, кому важна обратная связь и поддержка на пути</p>
             <ul class="tariff-features">
               <li>
                 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -635,15 +643,16 @@
                 <span>Ответы на вопросы</span>
               </li>
             </ul>
-            <p class="tariff-card-price">2 ₽</p>
+            <p class="tariff-card-price">14 900 ₽</p>
             <div class="tariff-pay-wrap">
-              <button class="tariff-card-btn tariff-card-btn-strong is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="support" data-title="С сопровождением" data-price="2">Выбрать формат</button>
+              <button class="tariff-card-btn tariff-card-btn-strong is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="support" data-title="С сопровождением" data-price="14900">Выбрать формат</button>
               <span class="tariff-pay-blocker" data-pay-blocker aria-hidden="true"></span>
             </div>
           </article>
 
           <article class="tariff-card tariff-card-vip">
             <h3 class="tariff-card-title">VIP</h3>
+            <p class="tariff-card-lead">Для тех, кто хочет пройти путь бережно и не в одиночку</p>
             <ul class="tariff-features">
               <li>
                 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -674,9 +683,9 @@
                 <span>Персональное сопровождение</span>
               </li>
             </ul>
-            <p class="tariff-card-price">3 ₽</p>
+            <p class="tariff-card-price">29 900 ₽</p>
             <div class="tariff-pay-wrap">
-              <button class="tariff-card-btn is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="vip" data-title="VIP" data-price="3">Выбрать формат</button>
+              <button class="tariff-card-btn is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="vip" data-title="VIP" data-price="29900">Выбрать формат</button>
               <span class="tariff-pay-blocker" data-pay-blocker aria-hidden="true"></span>
             </div>
           </article>
@@ -912,6 +921,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

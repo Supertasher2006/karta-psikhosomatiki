@@ -233,7 +233,7 @@
         el.textContent = state.title;
       });
       payModal.querySelectorAll("[data-pay-amount]").forEach((el) => {
-        el.textContent = `${state.price} ₽`;
+        el.textContent = `${state.price.toLocaleString("ru-RU")} ₽`;
       });
       payModal.querySelectorAll("[data-pay-phone]").forEach((el) => {
         el.textContent = PAYMENT.phoneDisplay;
@@ -302,7 +302,7 @@
 <tr><td>Email</td><td>${state.email}</td></tr>
 <tr><td>Телефон</td><td>${state.phone}</td></tr>
 <tr><td>Тариф</td><td>${state.title}</td></tr>
-<tr><td>Сумма</td><td><strong>${state.price} ₽</strong></td></tr>
+<tr><td>Сумма</td><td><strong>${state.price.toLocaleString("ru-RU")} ₽</strong></td></tr>
 <tr><td>Получатель</td><td>${PAYMENT.bank}, ${PAYMENT.phoneDisplay}</td></tr>
 <tr><td>Назначение</td><td>${state.purpose}</td></tr>
 </table>
@@ -360,7 +360,7 @@
       if (mail) {
         const subject = encodeURIComponent(`Электронный чек ${state.orderId} — Карта психосоматики тела`);
         const body = encodeURIComponent(
-          `Здравствуйте, ${state.name}!\n\nВаш электронный чек по оплате курса.\n\nЗаказ: ${state.orderId}\nТариф: ${state.title}\nСумма: ${state.price} ₽\nПолучатель: ${PAYMENT.bank}, ${PAYMENT.phoneDisplay}\nНазначение: ${state.purpose}\n\nСпасибо за оплату!`
+          `Здравствуйте, ${state.name}!\n\nВаш электронный чек по оплате курса.\n\nЗаказ: ${state.orderId}\nТариф: ${state.title}\nСумма: ${state.price.toLocaleString("ru-RU")} ₽\nПолучатель: ${PAYMENT.bank}, ${PAYMENT.phoneDisplay}\nНазначение: ${state.purpose}\n\nСпасибо за оплату!`
         );
         mail.href = `mailto:${encodeURIComponent(state.email)}?subject=${subject}&body=${body}`;
       }
@@ -386,15 +386,17 @@
     });
   });
 
-  document.querySelectorAll("[data-reviews-slider]").forEach((root) => {
-    const track = root.querySelector(".reviews-track");
-    const prev = root.querySelector("[data-reviews-prev]");
-    const next = root.querySelector("[data-reviews-next]");
+  document.querySelectorAll("[data-h-slider]").forEach((root) => {
+    const track = root.querySelector("[data-h-track]");
+    const prev = root.querySelector("[data-h-prev]");
+    const next = root.querySelector("[data-h-next]");
     if (!track) return;
 
     const scrollByCard = (dir) => {
-      const card = track.querySelector(".review-card");
-      const amount = card ? card.getBoundingClientRect().width + 20 : 300;
+      const card = track.children[0];
+      const styles = window.getComputedStyle(track);
+      const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
+      const amount = card ? card.getBoundingClientRect().width + gap : 300;
       track.scrollBy({ left: dir * amount, behavior: "smooth" });
     };
 
