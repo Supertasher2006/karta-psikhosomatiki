@@ -7,8 +7,8 @@
   <meta name="description" content="Научитесь лучше понимать сигналы своего организма и связь между эмоциями и здоровьем. 7-дневный курс Галины Тюлис." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=25" />
 </head>
 <body>
   <header class="site-header" id="top">
@@ -82,6 +82,28 @@
 
           <figure class="problem-figure">
             <img src="картинки/2 экран/контур.png" alt="" loading="lazy" decoding="async" />
+            <span class="silhouette-shine" aria-hidden="true"></span>
+            <svg class="silhouette-trace" viewBox="0 0 541 1024" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <defs>
+                <linearGradient id="silhouetteGold" x1="12%" y1="0%" x2="88%" y2="100%">
+                  <stop offset="0%" stop-color="#fff6d2" />
+                  <stop offset="28%" stop-color="#ffe9a8" />
+                  <stop offset="54%" stop-color="#e5b869" />
+                  <stop offset="100%" stop-color="#c9a227" />
+                </linearGradient>
+                <filter id="silhouetteGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="3.2" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <path class="silhouette-trace-line" pathLength="1000" d="M150.3 0 L125.7 60 L126 71 L117.9 102 L121.5 111 L116.7 135 L115.1 177 L119.8 192 L116.9 201 L134 297 L139.3 307 L139.3 339 L131.7 371 L134.1 377 L124.8 386 L100.9 440 L52.2 506 L45.6 522 L45.9 535 L60.9 557 L105.4 583 L116.5 594 L122.5 617 L116.3 645 L118.6 648 L137.8 660 L142.3 664 L140.8 667 L148.1 672 L176.7 684 L152 694 L145.6 711 L152.2 728 L168.6 742 L178.9 756 L184.5 814 L199.7 841 L222.6 851 L259.8 860 L262.8 862 L260.6 864 Q340 856 423.1 873 L443.1 903 L461.2 947 L465.9 981 L461.1 990 L458.2 1011 L479.5 1020 L479.5 1023" />
+              <path class="silhouette-trace-flow" pathLength="1000" d="M150.3 0 L125.7 60 L126 71 L117.9 102 L121.5 111 L116.7 135 L115.1 177 L119.8 192 L116.9 201 L134 297 L139.3 307 L139.3 339 L131.7 371 L134.1 377 L124.8 386 L100.9 440 L52.2 506 L45.6 522 L45.9 535 L60.9 557 L105.4 583 L116.5 594 L122.5 617 L116.3 645 L118.6 648 L137.8 660 L142.3 664 L140.8 667 L148.1 672 L176.7 684 L152 694 L145.6 711 L152.2 728 L168.6 742 L178.9 756 L184.5 814 L199.7 841 L222.6 851 L259.8 860 L262.8 862 L260.6 864 Q340 856 423.1 873 L443.1 903 L461.2 947 L465.9 981 L461.1 990 L458.2 1011 L479.5 1020 L479.5 1023" />
+              <path class="silhouette-trace-spark" pathLength="1000" d="M150.3 0 L125.7 60 L126 71 L117.9 102 L121.5 111 L116.7 135 L115.1 177 L119.8 192 L116.9 201 L134 297 L139.3 307 L139.3 339 L131.7 371 L134.1 377 L124.8 386 L100.9 440 L52.2 506 L45.6 522 L45.9 535 L60.9 557 L105.4 583 L116.5 594 L122.5 617 L116.3 645 L118.6 648 L137.8 660 L142.3 664 L140.8 667 L148.1 672 L176.7 684 L152 694 L145.6 711 L152.2 728 L168.6 742 L178.9 756 L184.5 814 L199.7 841 L222.6 851 L259.8 860 L262.8 862 L260.6 864 Q340 856 423.1 873 L443.1 903 L461.2 947 L465.9 981 L461.1 990 L458.2 1011 L479.5 1020 L479.5 1023" />
+            </svg>
           </figure>
         </div>
 
@@ -105,54 +127,213 @@
       <img src="картинки/3 экран.jpg?v=6" alt="" />
     </section>
 
-    <!-- 4. Recognize yourself -->
-    <section class="section recognize" id="recognize">
+    <!-- 4. Tariffs -->
+    <section class="section tariffs" id="tariffs">
       <div class="container">
         <div class="section-head reveal">
+          <h2>Тарифы</h2>
+          <p>Выберите формат участия — от самостоятельного прохождения до персонального сопровождения.</p>
+        </div>
+
+        <div class="tariff-grid reveal" id="tariff-cards">
+          <article class="tariff-card">
+            <h3 class="tariff-card-title">Самостоятельный</h3>
+            <p class="tariff-card-lead">Для тех, кто готов идти в своём темпе</p>
+            <ul class="tariff-features">
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>7 уроков</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Рабочая тетрадь</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Общий чат</span>
+              </li>
+            </ul>
+            <p class="tariff-card-price">7 900 ₽</p>
+            <div class="tariff-pay-wrap">
+              <button class="tariff-card-btn is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="self" data-title="Самостоятельный" data-price="7900">Выбрать формат</button>
+              <span class="tariff-pay-blocker" data-pay-blocker aria-hidden="true"></span>
+            </div>
+          </article>
+
+          <article class="tariff-card tariff-card-popular">
+            <span class="tariff-badge">Популярный выбор</span>
+            <h3 class="tariff-card-title">С сопровождением</h3>
+            <p class="tariff-card-lead">Для тех, кому важна обратная связь и поддержка на пути</p>
+            <ul class="tariff-features">
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>7 уроков</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Рабочая тетрадь</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Общий чат</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>2–3 прямых эфира</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Ответы на вопросы</span>
+              </li>
+            </ul>
+            <p class="tariff-card-price">14 900 ₽</p>
+            <div class="tariff-pay-wrap">
+              <button class="tariff-card-btn tariff-card-btn-strong is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="support" data-title="С сопровождением" data-price="14900">Выбрать формат</button>
+              <span class="tariff-pay-blocker" data-pay-blocker aria-hidden="true"></span>
+            </div>
+          </article>
+
+          <article class="tariff-card tariff-card-vip">
+            <h3 class="tariff-card-title">VIP</h3>
+            <p class="tariff-card-lead">Для тех, кто хочет пройти путь бережно и не в одиночку</p>
+            <ul class="tariff-features">
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>7 уроков</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Рабочая тетрадь</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Общий чат</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>2–3 прямых эфира</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Ответы на вопросы</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>7 индивидуальных консультаций</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Персональное сопровождение</span>
+              </li>
+            </ul>
+            <p class="tariff-card-price">29 900 ₽</p>
+            <div class="tariff-pay-wrap">
+              <button class="tariff-card-btn is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="vip" data-title="VIP" data-price="29900">Выбрать формат</button>
+              <span class="tariff-pay-blocker" data-pay-blocker aria-hidden="true"></span>
+            </div>
+          </article>
+        </div>
+
+        <div class="tariff-consent reveal" data-tariff-consent>
+          <p class="tariff-consent-title">Перед оплатой подтвердите согласие с документами</p>
+          <div class="consent-item">
+            <label class="consent-check">
+              <input type="checkbox" data-consent="privacy" />
+              <span>Я согласен с политикой конфиденциальности</span>
+            </label>
+            <button class="consent-link" type="button" data-legal-open="privacy">Читать</button>
+          </div>
+          <div class="consent-item">
+            <label class="consent-check">
+              <input type="checkbox" data-consent="offer" />
+              <span>Я согласен с договором публичной оферты</span>
+            </label>
+            <button class="consent-link" type="button" data-legal-open="offer">Читать</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Recognize yourself -->
+    <section class="section recognize" id="recognize">
+      <div class="container">
+        <div class="section-head recognize-head reveal">
           <h2>Возможно, вы узнаете себя</h2>
         </div>
         <div class="signals-slider reveal" data-h-slider>
           <ul class="signal-list" data-h-track>
             <li>
-              <img src="картинки/4 экран/хроническая усталость.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="signal-photo">
+                <img src="картинки/4 экран/хроническая усталость.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <p class="signal-num">01</p>
               <span>Хроническая усталость</span>
             </li>
             <li>
-              <img src="картинки/4 экран/тревожность.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="signal-photo">
+                <img src="картинки/4 экран/тревожность.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <p class="signal-num">02</p>
               <span>Тревожность</span>
             </li>
             <li>
-              <img src="картинки/4 экран/аллергия.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="signal-photo">
+                <img src="картинки/4 экран/аллергия.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <p class="signal-num">03</p>
               <span>Аллергия</span>
             </li>
             <li>
-              <img src="картинки/4 экран/лишний вес.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="signal-photo">
+                <img src="картинки/4 экран/лишний вес.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <p class="signal-num">04</p>
               <span>Лишний вес</span>
             </li>
             <li>
-              <img src="картинки/4 экран/боли.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="signal-photo">
+                <img src="картинки/4 экран/боли.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <p class="signal-num">05</p>
               <span>Боли</span>
             </li>
             <li>
-              <img src="картинки/4 экран/проблемы ЖКТ.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="signal-photo">
+                <img src="картинки/4 экран/проблемы ЖКТ.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <p class="signal-num">06</p>
               <span>Проблемы ЖКТ</span>
             </li>
             <li>
-              <img src="картинки/4 экран/кожные заболевания.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="signal-photo">
+                <img src="картинки/4 экран/кожные заболевания.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <p class="signal-num">07</p>
               <span>Кожные заболевания</span>
             </li>
             <li>
-              <img src="картинки/4 экран/болезни возвращаются.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="signal-photo">
+                <img src="картинки/4 экран/болезни возвращаются.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <p class="signal-num">08</p>
               <span>Болезни возвращаются</span>
             </li>
             <li>
-              <img src="картинки/4 экран/постоянный стресс.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="signal-photo">
+                <img src="картинки/4 экран/постоянный стресс.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <p class="signal-num">09</p>
               <span>Постоянный стресс</span>
             </li>
           </ul>
-          <div class="reviews-nav">
-            <button type="button" class="reviews-btn" data-h-prev aria-label="Предыдущая карточка">‹</button>
-            <button type="button" class="reviews-btn" data-h-next aria-label="Следующая карточка">›</button>
+          <div class="signals-nav">
+            <button type="button" class="signals-arrow" data-h-prev aria-label="Предыдущая карточка">‹</button>
+            <div class="signals-rail" aria-hidden="true">
+              <span class="signals-rail-fill" data-h-progress></span>
+              <span class="signals-rail-bead" data-h-bead></span>
+            </div>
+            <button type="button" class="signals-arrow" data-h-next aria-label="Следующая карточка">›</button>
+            <p class="signals-folio" data-h-folio>01 / 09</p>
           </div>
         </div>
       </div>
@@ -201,7 +382,7 @@
               <li>
                 <span class="diff-icon" aria-hidden="true">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.2 2.2L9.8 9.8M9.8 2.2L2.2 9.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M2.2 2.2L9.8 9.8M9.8 2.2L2.2 9.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
                   </svg>
                 </span>
                 <span><strong>Не эзотерика и не магия</strong> — только доказательные взаимосвязи ума и тела.</span>
@@ -209,7 +390,7 @@
               <li>
                 <span class="diff-icon" aria-hidden="true">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.2 2.2L9.8 9.8M9.8 2.2L2.2 9.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M2.2 2.2L9.8 9.8M9.8 2.2L2.2 9.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
                   </svg>
                 </span>
                 <span><strong>Не поиск виноватых</strong> — курс не предлагает обвинять себя или близких в болезнях.</span>
@@ -217,7 +398,7 @@
               <li>
                 <span class="diff-icon" aria-hidden="true">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.2 2.2L9.8 9.8M9.8 2.2L2.2 9.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M2.2 2.2L9.8 9.8M9.8 2.2L2.2 9.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
                   </svg>
                 </span>
                 <span><strong>Не универсальные ответы</strong> — мы не ищем одну «эмоцию» для каждого сложного заболевания.</span>
@@ -228,17 +409,29 @@
           <article class="diff-card diff-card-facts">
             <p class="diff-card-eyebrow">Научный подход курса</p>
             <h3>Научная психосоматика</h3>
-            <ul class="diff-list diff-list-dot">
+            <ul class="diff-list diff-list-check">
               <li>
-                <span class="diff-dot" aria-hidden="true"></span>
+                <span class="diff-icon diff-icon-check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 6.2L4.8 9L10.2 3.2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
                 <span><strong>Комплексный взгляд</strong> — исследуем реальную связь между эмоциональным состоянием и здоровьем.</span>
               </li>
               <li>
-                <span class="diff-dot" aria-hidden="true"></span>
+                <span class="diff-icon diff-icon-check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 6.2L4.8 9L10.2 3.2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
                 <span><strong>Уважение к медицине</strong> — подход работает <em class="diff-emphasis">рядом</em> с доказательной медициной, а не вместо неё.</span>
               </li>
               <li>
-                <span class="diff-dot" aria-hidden="true"></span>
+                <span class="diff-icon diff-icon-check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 6.2L4.8 9L10.2 3.2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
                 <span><strong>Осознанность и контакт</strong> — бережные инструменты для понимания истинных сигналов своего тела.</span>
               </li>
             </ul>
@@ -584,133 +777,6 @@
       </div>
     </section>
 
-    <!-- 15. Tariffs -->
-    <section class="section tariffs" id="tariffs">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>Тарифы</h2>
-          <p>Выберите формат участия — от самостоятельного прохождения до персонального сопровождения.</p>
-        </div>
-
-        <div class="tariff-grid reveal" id="tariff-cards">
-          <article class="tariff-card">
-            <h3 class="tariff-card-title">Самостоятельный</h3>
-            <p class="tariff-card-lead">Для тех, кто готов идти в своём темпе</p>
-            <ul class="tariff-features">
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>7 уроков</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Рабочая тетрадь</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Общий чат</span>
-              </li>
-            </ul>
-            <p class="tariff-card-price">7 900 ₽</p>
-            <div class="tariff-pay-wrap">
-              <button class="tariff-card-btn is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="self" data-title="Самостоятельный" data-price="7900">Выбрать формат</button>
-              <span class="tariff-pay-blocker" data-pay-blocker aria-hidden="true"></span>
-            </div>
-          </article>
-
-          <article class="tariff-card tariff-card-popular">
-            <span class="tariff-badge">Популярный выбор</span>
-            <h3 class="tariff-card-title">С сопровождением</h3>
-            <p class="tariff-card-lead">Для тех, кому важна обратная связь и поддержка на пути</p>
-            <ul class="tariff-features">
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>7 уроков</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Рабочая тетрадь</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Общий чат</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>2–3 прямых эфира</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Ответы на вопросы</span>
-              </li>
-            </ul>
-            <p class="tariff-card-price">14 900 ₽</p>
-            <div class="tariff-pay-wrap">
-              <button class="tariff-card-btn tariff-card-btn-strong is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="support" data-title="С сопровождением" data-price="14900">Выбрать формат</button>
-              <span class="tariff-pay-blocker" data-pay-blocker aria-hidden="true"></span>
-            </div>
-          </article>
-
-          <article class="tariff-card tariff-card-vip">
-            <h3 class="tariff-card-title">VIP</h3>
-            <p class="tariff-card-lead">Для тех, кто хочет пройти путь бережно и не в одиночку</p>
-            <ul class="tariff-features">
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>7 уроков</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Рабочая тетрадь</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Общий чат</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>2–3 прямых эфира</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Ответы на вопросы</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>7 индивидуальных консультаций</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.2 8.2 13.8 15.5 6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Персональное сопровождение</span>
-              </li>
-            </ul>
-            <p class="tariff-card-price">29 900 ₽</p>
-            <div class="tariff-pay-wrap">
-              <button class="tariff-card-btn is-locked" type="button" disabled aria-disabled="true" data-pay-open data-tariff="vip" data-title="VIP" data-price="29900">Выбрать формат</button>
-              <span class="tariff-pay-blocker" data-pay-blocker aria-hidden="true"></span>
-            </div>
-          </article>
-        </div>
-
-        <div class="tariff-consent reveal" data-tariff-consent>
-          <p class="tariff-consent-title">Перед оплатой подтвердите согласие с документами</p>
-          <div class="consent-item">
-            <label class="consent-check">
-              <input type="checkbox" data-consent="privacy" />
-              <span>Я согласен с политикой конфиденциальности</span>
-            </label>
-            <button class="consent-link" type="button" data-legal-open="privacy">Читать</button>
-          </div>
-          <div class="consent-item">
-            <label class="consent-check">
-              <input type="checkbox" data-consent="offer" />
-              <span>Я согласен с договором публичной оферты</span>
-            </label>
-            <button class="consent-link" type="button" data-legal-open="offer">Читать</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- 16. How it works -->
     <section class="section how" id="how">
       <div class="container">
@@ -806,8 +872,11 @@
 
     <!-- 20. Final CTA -->
     <section class="section final" id="final">
-      <div class="final-bg" aria-hidden="true"></div>
-      <div class="container narrow final-content reveal">
+      <div class="final-bg" aria-hidden="true">
+        <img class="final-image" src="картинки/финал.jpg" alt="" />
+        <div class="final-wash"></div>
+      </div>
+      <div class="final-content reveal">
         <h2 class="brand-title">Карта психосоматики тела</h2>
         <p>Тело не становится нашим врагом, оно подаёт сигналы. Иногда понятные, а иногда сложные. Этот курс поможет научиться замечать их и использовать эти знания как часть более осознанной заботы о себе.</p>
         <a class="btn btn-primary btn-lg" href="#tariffs">Начать обучение</a>
@@ -921,6 +990,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

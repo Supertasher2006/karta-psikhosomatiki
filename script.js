@@ -398,10 +398,34 @@
       const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
       const amount = card ? card.getBoundingClientRect().width + gap : 300;
       track.scrollBy({ left: dir * amount, behavior: "smooth" });
+      window.requestAnimationFrame(updateProgress);
+    };
+
+    const folio = root.querySelector("[data-h-folio]");
+    const rail = root.querySelector(".signals-rail");
+
+    const updateProgress = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const t = max > 1 ? Math.min(1, Math.max(0, track.scrollLeft / max)) : 0;
+      if (rail) rail.style.setProperty("--p", String(t));
+      if (folio) {
+        const card = track.children[0];
+        const styles = window.getComputedStyle(track);
+        const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
+        const amount = card ? card.getBoundingClientRect().width + gap : 1;
+        const index = Math.min(
+          track.children.length,
+          Math.max(1, Math.round(track.scrollLeft / amount) + 1)
+        );
+        folio.textContent = `${String(index).padStart(2, "0")} / ${String(track.children.length).padStart(2, "0")}`;
+      }
     };
 
     prev?.addEventListener("click", () => scrollByCard(-1));
     next?.addEventListener("click", () => scrollByCard(1));
+    track.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    updateProgress();
   });
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
