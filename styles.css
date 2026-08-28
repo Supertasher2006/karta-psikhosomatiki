@@ -990,7 +990,7 @@ ul, ol {
   display: grid;
   grid-template-columns: minmax(240px, 0.9fr) minmax(280px, 1.1fr);
   gap: clamp(2rem, 5vw, 4rem);
-  align-items: center;
+  align-items: start;
 }
 
 .author-photo {
@@ -1014,6 +1014,16 @@ ul, ol {
 
 .author-text {
   min-width: 0;
+}
+
+.author-text p {
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.author-text p:last-child {
+  margin-bottom: 0;
 }
 
 @keyframes photoReveal {
@@ -1457,7 +1467,7 @@ ul, ol {
 
 .map-layout {
   display: grid;
-  grid-template-columns: 1fr minmax(220px, 0.9fr) 1fr;
+  grid-template-columns: 1fr minmax(260px, 1.15fr) 1fr;
   gap: clamp(1.25rem, 3vw, 2.5rem);
   align-items: center;
 }
@@ -1471,9 +1481,13 @@ ul, ol {
 }
 
 .map-text p {
-  margin: 0;
+  margin: 0 0 0.85em;
   color: var(--ink-soft);
   font-weight: 500;
+}
+
+.map-text p:last-child {
+  margin-bottom: 0;
 }
 
 .map-side {
@@ -2648,8 +2662,8 @@ ul, ol {
   }
 
   .map-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr);
-    gap: 0.2rem 0.45rem;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr) minmax(0, 0.9fr);
+    gap: 0.2rem 0.4rem;
     align-items: center;
   }
 
@@ -2667,7 +2681,7 @@ ul, ol {
   }
 
   .map-text p {
-    font-size: clamp(0.74rem, 2.6vw, 0.95rem);
+    font-size: clamp(0.72rem, 2.5vw, 0.92rem);
     line-height: 1.4;
   }
 
