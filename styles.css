@@ -321,6 +321,7 @@ ul, ol {
   gap: 0.65rem 1.5rem;
   color: var(--ink-soft);
   font-size: 0.95rem;
+  max-width: 36rem;
 }
 
 .hero-points li {
@@ -1043,121 +1044,6 @@ ul, ol {
   margin-top: 1.5rem;
 }
 
-/* Difference duo cards */
-.difference {
-  font-family: "Inter", var(--font-body);
-}
-
-.difference .section-head h2 {
-  font-family: "Inter", sans-serif;
-}
-
-.diff-duo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto auto auto;
-  align-items: start;
-  column-gap: 2rem;
-  row-gap: 0;
-}
-
-.diff-card {
-  width: auto;
-  height: auto;
-  box-sizing: border-box;
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 5;
-  align-self: start;
-  align-items: start;
-  margin: 0;
-  padding: 52px;
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  font-family: "Inter", var(--font-body);
-}
-
-.diff-card-facts {
-  border: 1px solid rgba(229, 184, 105, 0.4);
-}
-
-.diff-card-eyebrow {
-  margin: 0 0 0.75rem;
-  font-family: "Inter", sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #c44a32;
-}
-
-.diff-card-facts .diff-card-eyebrow {
-  color: #c26a28;
-}
-
-.diff-card h3 {
-  margin: 0 0 1.5rem;
-  font-family: "Inter", sans-serif;
-  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
-  font-weight: 600;
-  line-height: 1.25;
-  color: #1a1210;
-}
-
-.diff-card-facts h3 {
-  color: #9a4e38;
-}
-
-.diff-list {
-  display: contents;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.diff-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-  margin: 0 0 1.15rem;
-  color: #241410;
-  font-size: 1.02rem;
-  font-weight: 400;
-  line-height: 1.55;
-}
-
-.diff-list li:last-child {
-  margin-bottom: 0;
-}
-
-.diff-list strong {
-  font-weight: 700;
-  color: #140c0a;
-}
-
-.diff-icon {
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  width: 18px;
-  height: 18px;
-  margin-top: 0.2em;
-  color: #e34a35;
-}
-
-.diff-icon-check {
-  color: #2f8f5b;
-}
-
-.diff-emphasis {
-  font-style: normal;
-  font-weight: 700;
-  color: #9a4e38;
-}
-
 /* Results */
 .result-list {
   display: grid;
@@ -1167,7 +1053,8 @@ ul, ol {
 
 .result-list li {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.12rem, 2vw, 1.42rem);
+  line-height: 1.35;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--line);
 }
@@ -2707,26 +2594,6 @@ ul, ol {
 @media (max-width: 768px) {
   .signals-slider {
     --signal-cols: 1;
-  }
-
-  .diff-duo {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    gap: 1.25rem;
-  }
-
-  .diff-card {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    grid-row: auto;
-    padding: 40px 28px;
-  }
-
-  .diff-list {
-    display: flex;
-    flex-direction: column;
   }
 
   .tariff-grid {
