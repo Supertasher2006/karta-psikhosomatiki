@@ -756,17 +756,22 @@ ul, ol {
 .signals-slider {
   --signal-gap: 1.65rem;
   --signal-cols: 3;
+  --signal-list-pad-top: 0.5rem;
+  --signal-track: min(1120px, calc(100% - 9rem));
   position: relative;
+  width: 100%;
 }
 
 .signal-list {
   display: flex;
   align-items: stretch;
   gap: var(--signal-gap);
+  width: var(--signal-track);
+  margin-inline: auto;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding: 0.5rem 0 0.65rem;
+  padding: var(--signal-list-pad-top) 0 0.65rem;
   background: transparent;
   border: 0;
   scrollbar-width: none;
@@ -859,78 +864,59 @@ ul, ol {
   color: var(--sage-deep);
 }
 
-.signals-nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.85rem;
-  margin-top: 1.15rem;
+.signals-arrow {
+  position: absolute;
+  z-index: 4;
+  top: var(--arrow-top, 32%);
+  width: 3.9rem;
+  height: 6.2rem;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: #8b5e4b;
+  cursor: pointer;
+  transform: translateY(-50%);
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.25s ease, transform 0.25s var(--ease), filter 0.25s ease;
 }
 
-.signals-arrow {
-  width: 2.5rem;
-  height: 2.5rem;
-  flex-shrink: 0;
-  border: 1px solid rgba(184, 137, 106, 0.28);
-  border-radius: 50%;
-  background: rgba(254, 244, 240, 0.7);
-  color: #8b5e4b;
-  font-size: 1.35rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: background 0.25s ease, transform 0.25s var(--ease), border-color 0.25s ease;
+.signals-arrow svg {
+  width: 2.55rem;
+  height: 5.1rem;
+  filter: drop-shadow(0 1px 10px rgba(254, 244, 240, 0.7));
+}
+
+.signals-arrow-prev {
+  left: max(0.35rem, calc((100% - var(--signal-track)) / 4 - 1.95rem));
+}
+
+.signals-arrow-next {
+  right: max(0.35rem, calc((100% - var(--signal-track)) / 4 - 1.95rem));
 }
 
 .signals-arrow:hover {
-  background: rgba(229, 184, 105, 0.22);
-  border-color: rgba(229, 184, 105, 0.55);
-  transform: translateY(-1px);
+  color: #c4a035;
 }
 
-.signals-rail {
-  --p: 0;
-  position: relative;
-  flex: 0 0 9.5rem;
-  width: 9.5rem;
-  height: 2px;
-  border-radius: 99px;
-  background: rgba(184, 137, 106, 0.16);
+.signals-arrow-prev:hover {
+  transform: translate(-4px, -50%);
 }
 
-.signals-rail-fill {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(90deg, #d38d72, #e5b869);
-  box-shadow: 0 0 10px rgba(229, 184, 105, 0.45);
-  transform: scaleX(var(--p));
-  transform-origin: left center;
+.signals-arrow-next:hover {
+  transform: translate(4px, -50%);
 }
 
-.signals-rail-bead {
-  position: absolute;
-  top: 50%;
-  left: calc(var(--p) * 100%);
-  width: 11px;
-  height: 11px;
-  margin: -5.5px 0 0 -5.5px;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 32% 28%, #fff 0 18%, transparent 22%),
-    radial-gradient(circle at 50% 50%, #ffe9a8 0%, #e5b869 42%, #c45c3e 100%);
-  box-shadow: 0 0 12px rgba(229, 184, 105, 0.85);
-  pointer-events: none;
+.signals-arrow:focus-visible {
+  outline: 1px solid rgba(196, 160, 53, 0.7);
+  outline-offset: 6px;
 }
 
-.signals-folio {
-  margin: 0;
-  min-width: 4.2rem;
-  font-family: var(--font-display);
-  font-size: 0.92rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--ink-soft);
-  text-align: right;
+.signals-arrow[hidden] {
+  display: none;
 }
 
 /* Why / author */
@@ -1526,6 +1512,10 @@ ul, ol {
 }
 
 /* Tariffs */
+.tariffs {
+  scroll-margin-top: var(--header-h);
+}
+
 .tariffs .container {
   overflow: visible;
 }
@@ -2132,15 +2122,15 @@ ul, ol {
 /* Footer */
 .site-footer {
   padding: 2.75rem 0 2.5rem;
-  border-top: 1px solid var(--line);
-  background: rgba(254, 244, 240, 0.95);
+  border-top: 0;
+  background: #000;
 }
 
 .footer-inner {
   display: grid;
   grid-template-columns: 1.15fr 1fr 1fr;
   gap: 2rem 2.5rem;
-  color: var(--ink-soft);
+  color: rgba(254, 244, 240, 0.78);
   font-size: 0.95rem;
   line-height: 1.55;
 }
@@ -2159,7 +2149,7 @@ ul, ol {
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 500;
-  color: var(--ink);
+  color: #fef4f0;
   line-height: 1.25;
 }
 
@@ -2169,25 +2159,25 @@ ul, ol {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #8b5e4b;
+  color: #f1c4a5;
 }
 
 .footer-note {
   margin-top: 0.55rem;
   max-width: 18rem;
   font-size: 0.88rem;
-  color: var(--ink-soft);
+  color: rgba(254, 244, 240, 0.62);
 }
 
 .footer-col a {
-  color: var(--ink);
+  color: #fef4f0;
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(139, 94, 75, 0.45);
+  text-decoration-color: rgba(254, 244, 240, 0.42);
 }
 
 .footer-col a:hover {
-  color: var(--red);
+  color: #f3b3cd;
   text-decoration-color: currentColor;
 }
 
@@ -2594,6 +2584,17 @@ ul, ol {
 @media (max-width: 768px) {
   .signals-slider {
     --signal-cols: 1;
+    --signal-track: min(1120px, calc(100% - 6.5rem));
+  }
+
+  .signals-arrow {
+    width: 2.7rem;
+    height: 4.4rem;
+  }
+
+  .signals-arrow svg {
+    width: 1.7rem;
+    height: 3.4rem;
   }
 
   .tariff-grid {

@@ -398,26 +398,20 @@
       const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
       const amount = card ? card.getBoundingClientRect().width + gap : 300;
       track.scrollBy({ left: dir * amount, behavior: "smooth" });
-      window.requestAnimationFrame(updateProgress);
     };
 
-    const folio = root.querySelector("[data-h-folio]");
-    const rail = root.querySelector(".signals-rail");
-
     const updateProgress = () => {
-      const max = track.scrollWidth - track.clientWidth;
-      const t = max > 1 ? Math.min(1, Math.max(0, track.scrollLeft / max)) : 0;
-      if (rail) rail.style.setProperty("--p", String(t));
-      if (folio) {
-        const card = track.children[0];
-        const styles = window.getComputedStyle(track);
-        const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
-        const amount = card ? card.getBoundingClientRect().width + gap : 1;
-        const index = Math.min(
-          track.children.length,
-          Math.max(1, Math.round(track.scrollLeft / amount) + 1)
-        );
-        folio.textContent = `${String(index).padStart(2, "0")} / ${String(track.children.length).padStart(2, "0")}`;
+      const max = Math.max(0, track.scrollWidth - track.clientWidth);
+      const atStart = track.scrollLeft <= 4;
+      const atEnd = track.scrollLeft >= max - 4;
+      if (prev) prev.hidden = atStart;
+      if (next) next.hidden = atEnd || max <= 4;
+
+      const photo = track.querySelector(".signal-photo");
+      if (photo) {
+        const rootRect = root.getBoundingClientRect();
+        const photoRect = photo.getBoundingClientRect();
+        root.style.setProperty("--arrow-top", `${photoRect.top - rootRect.top + photoRect.height / 2}px`);
       }
     };
 
@@ -425,6 +419,9 @@
     next?.addEventListener("click", () => scrollByCard(1));
     track.addEventListener("scroll", updateProgress, { passive: true });
     window.addEventListener("resize", updateProgress);
+    track.querySelectorAll("img").forEach((img) => {
+      if (!img.complete) img.addEventListener("load", updateProgress, { once: true });
+    });
     updateProgress();
   });
 
