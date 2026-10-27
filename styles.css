@@ -77,6 +77,7 @@ body {
     radial-gradient(900px 520px at 100% 18%, rgba(241, 196, 165, 0.4), transparent 55%),
     radial-gradient(700px 480px at 50% 100%, rgba(248, 179, 184, 0.35), transparent 60%),
     linear-gradient(180deg, var(--cream) 0%, var(--beige-light) 48%, var(--pink) 100%);
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -889,7 +890,7 @@ ul, ol {
 }
 
 .author {
-  background: linear-gradient(180deg, transparent, rgba(247, 221, 206, 0.55));
+  background: transparent;
 }
 
 .author-grid,
