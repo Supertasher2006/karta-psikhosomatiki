@@ -350,8 +350,8 @@ ul, ol {
   min-height: 100vh;
   min-height: 100dvh;
   display: grid;
-  align-items: end;
-  padding: calc(var(--header-h) + 2rem) 1.25rem 4.5rem;
+  align-items: center;
+  padding: calc(var(--header-h) + 1.5rem) 1.25rem 3rem;
   position: relative;
   overflow: hidden;
   background: transparent;
@@ -2950,12 +2950,11 @@ ul, ol {
   align-self: flex-start;
 }
 
-/* Reveal animations */
-html.js .reveal,
-html.js .reveal-stagger > * {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+/* Reveal animations — never hide content; JS only adds a class */
+.reveal,
+.reveal-stagger > * {
+  opacity: 1;
+  transform: none;
 }
 
 .reveal.is-visible,
