@@ -1507,7 +1507,7 @@ ul, ol {
 
 .uniqueness {
   background: transparent;
-  padding-block: clamp(3.25rem, 6vw, 5rem);
+  padding-block: clamp(3.5rem, 7vw, 6.5rem);
 }
 
 .uniqueness .container {
@@ -1520,8 +1520,13 @@ ul, ol {
 .uniqueness-head {
   text-align: left;
   margin-inline: 0;
-  margin-bottom: 1.75rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2.4rem);
   max-width: none;
+}
+
+.uniqueness-head h2 {
+  font-size: clamp(2.15rem, 4.4vw, 3.35rem);
+  letter-spacing: -0.04em;
 }
 
 .uniq-mosaic {
@@ -1531,17 +1536,17 @@ ul, ol {
     "desert copy1"
     "copy2 magician"
     "galina copy3";
-  column-gap: clamp(2rem, 6vw, 5rem);
-  row-gap: clamp(1.75rem, 4vw, 3rem);
+  column-gap: clamp(2.5rem, 7vw, 6rem);
+  row-gap: clamp(0.4rem, 1.6vw, 1.1rem);
   align-items: center;
 }
 
 .uniq-desert { grid-area: desert; justify-self: start; }
-.uniq-copy-01 { grid-area: copy1; }
-.uniq-copy-02 { grid-area: copy2; }
+.uniq-copy-01 { grid-area: copy1; justify-self: start; }
+.uniq-copy-02 { grid-area: copy2; justify-self: start; }
 .uniq-magician { grid-area: magician; justify-self: center; }
 .uniq-galina { grid-area: galina; justify-self: start; }
-.uniq-copy-03 { grid-area: copy3; }
+.uniq-copy-03 { grid-area: copy3; justify-self: start; }
 
 .uniq-visual {
   margin: 0;
@@ -1550,8 +1555,8 @@ ul, ol {
 
 .uniq-visual img {
   width: auto;
-  max-width: min(300px, 100%);
-  max-height: 300px;
+  max-width: min(320px, 100%);
+  max-height: 320px;
   height: auto;
   display: block;
   background: transparent;
@@ -1559,12 +1564,13 @@ ul, ol {
 }
 
 .uniq-magician img {
-  max-width: min(340px, 100%);
-  max-height: 460px;
+  max-width: min(380px, 100%);
+  max-height: 520px;
 }
 
 .uniq-copy {
   min-width: 0;
+  max-width: 28rem;
 }
 
 .uniq-num {
@@ -3125,7 +3131,7 @@ ul, ol {
       "copy3";
     justify-items: center;
     text-align: center;
-    row-gap: 0.85rem;
+    row-gap: 1.1rem;
   }
 
   .uniq-copy-01,
@@ -3133,6 +3139,12 @@ ul, ol {
   .uniq-copy-03 {
     padding-top: 0.15rem;
     align-self: start;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .uniq-magician img {
+    max-height: 430px;
   }
 
   .who-grid {
