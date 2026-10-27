@@ -386,6 +386,51 @@
     });
   });
 
+  const diplomaLightbox = document.getElementById("diploma-lightbox");
+  if (diplomaLightbox) {
+    const gallery = document.querySelector("[data-diploma-gallery]");
+    const buttons = gallery ? Array.from(gallery.querySelectorAll("[data-diploma-open]")) : [];
+    const image = diplomaLightbox.querySelector("img");
+    const title = diplomaLightbox.querySelector("[id='diploma-lightbox-title']");
+    let index = 0;
+
+    const show = (nextIndex) => {
+      if (!buttons.length) return;
+      index = (nextIndex + buttons.length) % buttons.length;
+      const btn = buttons[index];
+      const img = btn.querySelector("img");
+      image.src = img?.currentSrc || img?.src || "";
+      image.alt = img?.alt || "";
+      if (title) title.textContent = btn.querySelector("span")?.textContent || img?.alt || "";
+    };
+
+    const open = (startIndex) => {
+      show(startIndex);
+      diplomaLightbox.hidden = false;
+      document.body.style.overflow = "hidden";
+    };
+
+    const close = () => {
+      diplomaLightbox.hidden = true;
+      document.body.style.overflow = "";
+    };
+
+    buttons.forEach((btn, i) => {
+      btn.addEventListener("click", () => open(i));
+    });
+    diplomaLightbox.querySelectorAll("[data-diploma-close]").forEach((el) => {
+      el.addEventListener("click", close);
+    });
+    diplomaLightbox.querySelector("[data-diploma-prev]")?.addEventListener("click", () => show(index - 1));
+    diplomaLightbox.querySelector("[data-diploma-next]")?.addEventListener("click", () => show(index + 1));
+    document.addEventListener("keydown", (event) => {
+      if (diplomaLightbox.hidden) return;
+      if (event.key === "Escape") close();
+      if (event.key === "ArrowLeft") show(index - 1);
+      if (event.key === "ArrowRight") show(index + 1);
+    });
+  }
+
   document.querySelectorAll("[data-h-slider]").forEach((root) => {
     const track = root.querySelector("[data-h-track]");
     const prev = root.querySelector("[data-h-prev]");
@@ -425,6 +470,27 @@
     updateProgress();
   });
 
+  document.querySelectorAll("[data-body-map]").forEach((root) => {
+    const spots = Array.from(root.querySelectorAll("[data-zone]"));
+    const numEl = root.querySelector("[data-body-num]");
+    const textEl = root.querySelector("[data-body-text]");
+    if (!spots.length || !textEl) return;
+
+    const setZone = (spot) => {
+      spots.forEach((item) => {
+        const on = item === spot;
+        item.classList.toggle("is-active", on);
+        item.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      if (numEl) numEl.textContent = spot.getAttribute("data-num") || "";
+      textEl.textContent = spot.getAttribute("data-text") || "";
+    };
+
+    spots.forEach((spot) => {
+      spot.addEventListener("click", () => setZone(spot));
+    });
+  });
+
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion) {
     document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => {
@@ -446,4 +512,10 @@
   );
 
   document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => observer.observe(el));
+
+  window.setTimeout(() => {
+    document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => {
+      el.classList.add("is-visible");
+    });
+  }, 900);
 })();
