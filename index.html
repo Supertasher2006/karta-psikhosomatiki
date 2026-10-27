@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Карта психосоматики тела — курс Галины Тюлис</title>
   <meta name="description" content="Если обследования в порядке, а вам всё равно плохо — за 7 дней вы разберётесь в сигналах своего тела. Курс врача Галины Тюлис с 25-летним стажем." />
-  <link rel="stylesheet" href="styles.css?v=70" />
+  <link rel="preload" href="media/hero.webp" as="image" />
+  <link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" />
+  <link rel="stylesheet" href="styles.css?v=71" />
 </head>
 <body>
   <header class="site-header" id="top">
@@ -28,7 +30,7 @@
     <!-- 1. Hero -->
     <section class="hero" id="hero">
       <div class="hero-bg" aria-hidden="true">
-        <img class="hero-image" src="картинки/1 экран.png" alt="" />
+        <img class="hero-image" src="media/hero.webp" alt="" fetchpriority="high" decoding="async" />
         <div class="hero-wash"></div>
       </div>
       <div class="hero-content">
@@ -79,7 +81,7 @@
           </div>
 
           <figure class="problem-figure">
-            <img src="картинки/2 экран/контур.png" alt="" loading="lazy" decoding="async" />
+            <img src="media/contour.webp" alt="" loading="lazy" decoding="async" />
             <span class="silhouette-shine" aria-hidden="true"></span>
             <svg class="silhouette-trace" viewBox="0 0 541 1024" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
               <defs>
@@ -122,7 +124,7 @@
 
     <!-- 3. Quote -->
     <section class="quote-section" id="quote">
-      <img src="картинки/3 экран.jpg?v=6" alt="" />
+      <img src="media/quote.webp" alt="" loading="lazy" decoding="async" />
     </section>
 
     <!-- About the course -->
@@ -152,63 +154,63 @@
           <ul class="signal-list" data-h-track>
             <li>
               <div class="signal-photo">
-                <img src="картинки/4 экран/хроническая усталость.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="media/signal-fatigue.webp" alt="" loading="lazy" decoding="async" />
               </div>
               <p class="signal-num">01</p>
               <span>Хроническая усталость</span>
             </li>
             <li>
               <div class="signal-photo">
-                <img src="картинки/4 экран/тревожность.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="media/signal-anxiety.webp" alt="" loading="lazy" decoding="async" />
               </div>
               <p class="signal-num">02</p>
               <span>Внутренняя тревога</span>
             </li>
             <li>
               <div class="signal-photo">
-                <img src="картинки/4 экран/аллергия.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="media/signal-allergy.webp" alt="" loading="lazy" decoding="async" />
               </div>
               <p class="signal-num">03</p>
               <span>Аллергия «из ниоткуда»</span>
             </li>
             <li>
               <div class="signal-photo">
-                <img src="картинки/4 экран/лишний вес.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="media/signal-weight.webp" alt="" loading="lazy" decoding="async" />
               </div>
               <p class="signal-num">04</p>
               <span>Сложности с весом</span>
             </li>
             <li>
               <div class="signal-photo">
-                <img src="картинки/4 экран/боли.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="media/signal-pain.webp" alt="" loading="lazy" decoding="async" />
               </div>
               <p class="signal-num">05</p>
               <span>Боль, которую трудно объяснить</span>
             </li>
             <li>
               <div class="signal-photo">
-                <img src="картинки/4 экран/проблемы ЖКТ.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="media/signal-gut.webp" alt="" loading="lazy" decoding="async" />
               </div>
               <p class="signal-num">06</p>
               <span>Чувствительный желудок</span>
             </li>
             <li>
               <div class="signal-photo">
-                <img src="картинки/4 экран/кожные заболевания.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="media/signal-skin.webp" alt="" loading="lazy" decoding="async" />
               </div>
               <p class="signal-num">07</p>
               <span>Кожа реагирует на стресс</span>
             </li>
             <li>
               <div class="signal-photo">
-                <img src="картинки/4 экран/болезни возвращаются.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="media/signal-return.webp" alt="" loading="lazy" decoding="async" />
               </div>
               <p class="signal-num">08</p>
               <span>Симптомы возвращаются</span>
             </li>
             <li>
               <div class="signal-photo">
-                <img src="картинки/4 экран/постоянный стресс.jpg" alt="" loading="lazy" decoding="async" />
+                <img src="media/signal-stress.webp" alt="" loading="lazy" decoding="async" />
               </div>
               <p class="signal-num">09</p>
               <span>Постоянный стресс</span>
@@ -235,23 +237,23 @@
         </div>
         <div class="who-grid reveal-stagger">
           <article class="who-card">
-            <img src="картинки/кому/01-vozvrat-simptomov.jpg" alt="" loading="lazy" decoding="async" />
+            <img src="media/who-01.webp" alt="" loading="lazy" decoding="async" />
             <p>Тем, кто следит за здоровьем, выполняет рекомендации, но возвращается к одной и той же проблеме снова и снова.</p>
           </article>
           <article class="who-card">
-            <img src="картинки/кому/02-napryazhenie.jpg" alt="" loading="lazy" decoding="async" />
+            <img src="media/who-02.webp" alt="" loading="lazy" decoding="async" />
             <p>Тем, кто чувствует напряжение в теле и хочет понять его причины без сложных терминов.</p>
           </article>
           <article class="who-card">
-            <img src="картинки/кому/03-stress-v-tele.jpg" alt="" loading="lazy" decoding="async" />
+            <img src="media/who-03.webp" alt="" loading="lazy" decoding="async" />
             <p>Тем, кого беспокоят телесные реакции на стресс: ком в горле, тяжесть в груди, зажимы в шее и спине.</p>
           </article>
           <article class="who-card">
-            <img src="картинки/кому/04-samoopomosh.jpg" alt="" loading="lazy" decoding="async" />
+            <img src="media/who-04.webp" alt="" loading="lazy" decoding="async" />
             <p>Людям, которые ищут понятные и безопасные способы самопомощи и хотят опираться на осознанность, а не на догадки.</p>
           </article>
           <article class="who-card">
-            <img src="картинки/кому/05-vmeste-s-vrachom.jpg" alt="" loading="lazy" decoding="async" />
+            <img src="media/who-05.webp" alt="" loading="lazy" decoding="async" />
             <p>Тем, кто хочет дополнить заботу о теле: не вместо врача, а вместе с ним.</p>
           </article>
         </div>
@@ -267,7 +269,7 @@
           <p>Так начался путь в научную психосоматику: <strong class="why-accent">не вместо медицины, а рядом с ней</strong>. Я захотела дать людям понятный язык, чтобы они могли замечать связь между эмоциями, стрессом и самочувствием, и бережнее заботиться о себе.</p>
         </div>
         <figure class="why-figure">
-          <img src="картинки/5 экран (2).png?v=7" alt="" loading="lazy" decoding="async" />
+          <img src="media/why.webp" alt="" loading="lazy" decoding="async" />
         </figure>
       </div>
     </section>
@@ -280,7 +282,7 @@
         </div>
         <div class="uniq-mosaic reveal">
           <figure class="uniq-visual uniq-desert">
-            <img src="картинки/zhenshchina-meditaciya-pustynya.png?v=2" alt="" loading="lazy" decoding="async" />
+            <img src="media/uniq-desert.webp" alt="" loading="lazy" decoding="async" />
           </figure>
           <div class="uniq-copy uniq-copy-01">
             <p class="uniq-num">01</p>
@@ -293,10 +295,10 @@
             <p>Для работы с психосоматическими заболеваниями.</p>
           </div>
           <figure class="uniq-visual uniq-magician">
-            <img src="картинки/fokusnica-zdorove-iz-shlyapy.png?v=3" alt="" loading="lazy" decoding="async" />
+            <img src="media/uniq-magician.webp" alt="" loading="lazy" decoding="async" />
           </figure>
           <figure class="uniq-visual uniq-galina">
-            <img src="картинки/psiholog-ozhidaet-zvonok.png?v=2" alt="" loading="lazy" decoding="async" />
+            <img src="media/uniq-galina.webp" alt="" loading="lazy" decoding="async" />
           </figure>
           <div class="uniq-copy uniq-copy-03">
             <p class="uniq-num">03</p>
@@ -314,7 +316,7 @@
     <section class="section author" id="author">
       <div class="container author-layout reveal">
         <figure class="author-photo">
-          <img src="картинки/6 экран.jpg" alt="Галина Тюлис" />
+          <img src="media/author.webp" alt="Галина Тюлис" loading="lazy" decoding="async" />
         </figure>
         <div class="author-side">
           <h2>Об авторе курса</h2>
@@ -335,31 +337,31 @@
             <div class="diplomas-slider">
               <div class="diplomas-track" data-h-track>
                 <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть диплом врача, 1995">
-                  <img src="картинки/дипломы/photo_5379757679015828995_y.jpg" alt="Диплом врача, лечебное дело, 1995" loading="lazy" decoding="async" />
+                  <img src="media/diploma-01.webp" alt="Диплом врача, лечебное дело, 1995" loading="lazy" decoding="async" />
                   <span>Диплом врача, 1995</span>
                 </button>
                 <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть удостоверение интернатуры по дерматовенерологии">
-                  <img src="картинки/дипломы/photo_5379757679015828996_y.jpg" alt="Удостоверение интернатуры по дерматовенерологии" loading="lazy" decoding="async" />
+                  <img src="media/diploma-02.webp" alt="Удостоверение интернатуры по дерматовенерологии" loading="lazy" decoding="async" />
                   <span>Интернатура, дерматовенерология</span>
                 </button>
                 <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть сертификат специалиста по дерматовенерологии">
-                  <img src="картинки/дипломы/photo_5379757679015828998_y.jpg" alt="Сертификат специалиста по дерматовенерологии" loading="lazy" decoding="async" />
+                  <img src="media/diploma-03.webp" alt="Сертификат специалиста по дерматовенерологии" loading="lazy" decoding="async" />
                   <span>Сертификат специалиста</span>
                 </button>
                 <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть диплом психолога">
-                  <img src="картинки/дипломы/photo_5379757679015828999_y.jpg" alt="Диплом о профессиональной переподготовке, психолог" loading="lazy" decoding="async" />
+                  <img src="media/diploma-04.webp" alt="Диплом о профессиональной переподготовке, психолог" loading="lazy" decoding="async" />
                   <span>Психолог</span>
                 </button>
                 <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть диплом по косметологии">
-                  <img src="картинки/дипломы/photo_5379757679015829000_y.jpg" alt="Диплом о профессиональной переподготовке, косметология" loading="lazy" decoding="async" />
+                  <img src="media/diploma-05.webp" alt="Диплом о профессиональной переподготовке, косметология" loading="lazy" decoding="async" />
                   <span>Косметология</span>
                 </button>
                 <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть удостоверение по косметологии">
-                  <img src="картинки/дипломы/photo_5379757679015829001_y.jpg" alt="Удостоверение о повышении квалификации, косметология" loading="lazy" decoding="async" />
+                  <img src="media/diploma-06.webp" alt="Удостоверение о повышении квалификации, косметология" loading="lazy" decoding="async" />
                   <span>Повышение квалификации</span>
                 </button>
                 <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть удостоверение по трихологии">
-                  <img src="картинки/дипломы/photo_5379757679015828997_y.jpg" alt="Удостоверение о повышении квалификации, трихология" loading="lazy" decoding="async" />
+                  <img src="media/diploma-07.webp" alt="Удостоверение о повышении квалификации, трихология" loading="lazy" decoding="async" />
                   <span>Трихология</span>
                 </button>
               </div>
@@ -400,7 +402,7 @@
         </div>
         <div class="body-map reveal" data-body-map>
           <div class="body-map-stage">
-            <img src="картинки/karta-tela-anatomiya.png?v=1" alt="Карта тела. Нажмите на зону, чтобы прочитать результат." width="674" height="1095" />
+            <img src="media/body-map.webp" alt="Карта тела. Нажмите на зону, чтобы прочитать результат." width="674" height="1095" loading="lazy" decoding="async" />
             <button type="button" class="body-hotspot" style="--x: 47.7%; --y: 15.2%;" data-zone="head" data-num="01" data-text="Замечать первые признаки телесного напряжения и понимать, с какой эмоцией или стрессовой ситуацией это может быть связано" aria-pressed="false" aria-label="Голова: замечать первые признаки напряжения"></button>
             <button type="button" class="body-hotspot" style="--x: 47.8%; --y: 22.4%;" data-zone="neck" data-num="03" data-text="Применять мягкие техники самопомощи для снижения напряжения в шее, спине, груди" aria-pressed="false" aria-label="Шея и плечи: техники самопомощи"></button>
             <button type="button" class="body-hotspot" style="--x: 49.4%; --y: 30.1%;" data-zone="heart" data-num="04" data-text="Осознанно выбирать способы заботы о себе в стрессовые периоды, опираясь на понимание своих реакций" aria-pressed="false" aria-label="Сердце: забота о себе в стрессе"></button>
@@ -435,7 +437,7 @@
             <div class="accordion-panel">
               <div class="accordion-content">
                 <figure class="accordion-media day-cutout">
-                  <img src="картинки/9 экран/день 1.png" alt="" loading="lazy" decoding="async" />
+                  <img src="media/day-01.webp" alt="" loading="lazy" decoding="async" />
                 </figure>
                 <div class="accordion-text">
                   <p>Почему организм начинает говорить симптомами, когда словами сказать не получается. Уже в первый день вы заметите сигналы, которые раньше списывали на обычную усталость.</p>
@@ -459,7 +461,7 @@
             <div class="accordion-panel">
               <div class="accordion-content">
                 <figure class="accordion-media">
-                  <img src="картинки/9 экран/день 2.jpg" alt="" loading="lazy" decoding="async" />
+                  <img src="media/day-02.webp" alt="" loading="lazy" decoding="async" />
                 </figure>
                 <div class="accordion-text">
                   <p>Что может стоять за тяжестью в желудке, «нервным» кишечником и аллергией, которая вспыхивает в самый неподходящий момент.</p>
@@ -482,7 +484,7 @@
             <div class="accordion-panel">
               <div class="accordion-content">
                 <figure class="accordion-media">
-                  <img src="картинки/9 экран/день 3.jpg" alt="" loading="lazy" decoding="async" />
+                  <img src="media/day-03.webp" alt="" loading="lazy" decoding="async" />
                 </figure>
                 <div class="accordion-text">
                   <p>Почему шея и спина держат то, что вы не договариваете. И почему массаж помогает — но только до следующего стресса.</p>
@@ -506,7 +508,7 @@
             <div class="accordion-panel">
               <div class="accordion-content">
                 <figure class="accordion-media">
-                  <img src="картинки/9 экран/день 4.jpg" alt="" loading="lazy" decoding="async" />
+                  <img src="media/day-04.webp" alt="" loading="lazy" decoding="async" />
                 </figure>
                 <div class="accordion-text">
                   <p>Бережный разговор о женском здоровье — без стыда и советов «просто расслабьтесь». О том, как отношение к себе отражается в теле.</p>
@@ -530,7 +532,7 @@
             <div class="accordion-panel">
               <div class="accordion-content">
                 <figure class="accordion-media">
-                  <img src="картинки/9 экран/день 5.jpg" alt="" loading="lazy" decoding="async" />
+                  <img src="media/day-05.webp" alt="" loading="lazy" decoding="async" />
                 </figure>
                 <div class="accordion-text">
                   <p>Почему вес иногда держится не из-за «слабой силы воли», а потому что так телу спокойнее. Без диет и чувства вины.</p>
@@ -554,7 +556,7 @@
             <div class="accordion-panel">
               <div class="accordion-content">
                 <figure class="accordion-media">
-                  <img src="картинки/9 экран/день 6.jpg" alt="" loading="lazy" decoding="async" />
+                  <img src="media/day-06.webp" alt="" loading="lazy" decoding="async" />
                 </figure>
                 <div class="accordion-text">
                   <p>Почему одно и то же возвращается годами — и как смотреть на своё состояние целиком, а не бороться с каждым обострением по отдельности.</p>
@@ -578,7 +580,7 @@
             <div class="accordion-panel">
               <div class="accordion-content">
                 <figure class="accordion-media">
-                  <img src="картинки/9 экран/день 7.jpg" alt="" loading="lazy" decoding="async" />
+                  <img src="media/day-07.webp" alt="" loading="lazy" decoding="async" />
                 </figure>
                 <div class="accordion-text">
                   <p>В этот день всё сложится в вашу личную карту: не «надо бы начать когда-нибудь», а понятный план на время после курса.</p>
@@ -642,10 +644,10 @@
         </div>
         <div class="flipbook" data-flipbook>
           <div class="flipbook-stage">
-            <img class="flip-page is-active" src="картинки/11 экран/Снимок.JPG" alt="Страница рабочей тетради 1" data-index="0" />
-            <img class="flip-page" src="картинки/11 экран/Снимок1.JPG" alt="Страница рабочей тетради 2" data-index="1" />
-            <img class="flip-page" src="картинки/11 экран/Снимок3.JPG" alt="Страница рабочей тетради 3" data-index="2" />
-            <img class="flip-page" src="картинки/11 экран/Снимок4.JPG" alt="Страница рабочей тетради 4" data-index="3" />
+            <img class="flip-page is-active" src="media/notebook-01.webp" alt="Страница рабочей тетради 1" data-index="0" loading="lazy" decoding="async" />
+            <img class="flip-page" src="media/notebook-02.webp" alt="Страница рабочей тетради 2" data-index="1" loading="lazy" decoding="async" />
+            <img class="flip-page" src="media/notebook-03.webp" alt="Страница рабочей тетради 3" data-index="2" loading="lazy" decoding="async" />
+            <img class="flip-page" src="media/notebook-04.webp" alt="Страница рабочей тетради 4" data-index="3" loading="lazy" decoding="async" />
           </div>
           <div class="flipbook-controls">
             <button type="button" class="flip-btn" data-flip="-1" aria-label="Предыдущая страница">‹</button>
@@ -660,14 +662,14 @@
     <section class="section map-section" id="map">
       <div class="container map-layout reveal">
         <figure class="map-side map-side-left">
-          <img src="картинки/12 экран/слева.png?v=27" alt="" loading="lazy" decoding="async" />
+          <img src="media/map-left.webp" alt="" loading="lazy" decoding="async" />
         </figure>
         <div class="map-text">
           <h2>Карта психосоматики</h2>
           <p>Мы привыкли заглушать симптомы, терпеть и надеяться, что само пройдёт. Но можно иначе: остановиться и спросить, о чём на самом деле просит тело. Это не замена врача. Это язык, без которого лечение идёт вслепую.</p>
         </div>
         <figure class="map-side map-side-right">
-          <img src="картинки/12 экран/справа.png?v=27" alt="" loading="lazy" decoding="async" />
+          <img src="media/map-right.webp" alt="" loading="lazy" decoding="async" />
         </figure>
       </div>
     </section>
@@ -849,7 +851,7 @@
     <!-- 20. Final CTA -->
     <section class="section final" id="final">
       <div class="final-bg" aria-hidden="true">
-        <img class="final-image" src="картинки/финал.jpg" alt="" />
+        <img class="final-image" src="media/final.webp" alt="" loading="lazy" decoding="async" />
         <div class="final-wash"></div>
       </div>
       <div class="final-content reveal">
@@ -1104,6 +1106,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=9" defer></script>
 </body>
 </html>
