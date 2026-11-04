@@ -374,16 +374,52 @@
     });
   }
 
-  document.querySelectorAll("[data-accordion]").forEach((root) => {
-    const items = Array.from(root.querySelectorAll(".accordion-item"));
-    items.forEach((item) => {
-      item.addEventListener("toggle", () => {
-        if (!item.open) return;
-        items.forEach((other) => {
-          if (other !== item) other.open = false;
-        });
+  document.querySelectorAll("[data-program]").forEach((root) => {
+    const items = Array.from(root.querySelectorAll(".program-day"));
+    const glows = Array.from(root.querySelectorAll(".program-gl"));
+    const cap = root.querySelector("[data-program-cap]");
+    const prog = root.querySelector("[data-program-progress]");
+    const seen = new Set();
+    let top = -1;
+
+    const paint = (cur) => {
+      const allOn = cur >= 0 && items[cur]?.classList.contains("is-all");
+      glows.forEach((glow) => {
+        const day = Number(glow.getAttribute("data-day"));
+        glow.classList.toggle("is-cur", cur >= 0 && (allOn ? day === 5 : day === cur));
+        glow.classList.remove("is-lit");
       });
+      if (cap) {
+        cap.style.opacity = cur >= 0 ? "1" : "0";
+        if (cur >= 0) {
+          cap.textContent = `День ${cur + 1}: ${items[cur].getAttribute("data-zone-name") || ""}`;
+        }
+      }
+      if (prog) prog.textContent = `Карта: открыто зон ${seen.size} из ${items.length}`;
+    };
+
+    const toggle = (index) => {
+      const wasOpen = items[index].classList.contains("is-open");
+      items.forEach((item, i) => {
+        const open = i === index && !wasOpen;
+        if (item.classList.contains("is-open")) item.classList.add("is-seen");
+        item.classList.toggle("is-open", open);
+        item.querySelector(".program-day-trigger")?.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      if (!wasOpen) {
+        items[index].classList.add("is-seen");
+        seen.add(index);
+        top = Math.max(top, index);
+      }
+      items.forEach((item, i) => item.classList.toggle("is-done", i < top));
+      paint(wasOpen ? -1 : index);
+    };
+
+    items.forEach((item, i) => {
+      item.querySelector(".program-day-trigger")?.addEventListener("click", () => toggle(i));
     });
+
+    toggle(0);
   });
 
   const diplomaLightbox = document.getElementById("diploma-lightbox");
@@ -471,24 +507,118 @@
   });
 
   document.querySelectorAll("[data-body-map]").forEach((root) => {
-    const spots = Array.from(root.querySelectorAll("[data-zone]"));
-    const numEl = root.querySelector("[data-body-num]");
+    const stage = root.querySelector(".body-map-stage");
+    const spots = Array.from(root.querySelectorAll(".body-hotspot"));
+    const pills = Array.from(root.querySelectorAll("[data-pill]"));
+    const swap = root.querySelector("[data-body-swap]");
+    const labelEl = root.querySelector("[data-body-label]");
+    const titleEl = root.querySelector("[data-body-title]");
     const textEl = root.querySelector("[data-body-text]");
+    const countEl = root.querySelector("[data-body-count]");
+    const cta = root.querySelector("[data-body-cta]");
+    const prev = root.querySelector("[data-body-prev]");
+    const next = root.querySelector("[data-body-next]");
     if (!spots.length || !textEl) return;
 
-    const setZone = (spot) => {
-      spots.forEach((item) => {
-        const on = item === spot;
+    const tags = Array.from(root.querySelectorAll(".body-map-tag"));
+    const visited = new Set();
+    let index = 1;
+    let animating = false;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const escapeHtml = (value) =>
+      value.replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      }[char]));
+
+    const markedCopy = (copy, mark) => {
+      const safe = escapeHtml(copy || "");
+      if (!mark) return safe;
+      const needle = escapeHtml(mark);
+      const at = safe.indexOf(needle);
+      if (at === -1) return safe;
+      return `${safe.slice(0, at)}<span class="hl">${needle}</span>${safe.slice(at + needle.length)}`;
+    };
+
+    const render = (spot) => {
+      if (labelEl) labelEl.textContent = spot.getAttribute("data-label") || "";
+      if (titleEl) titleEl.textContent = spot.getAttribute("data-title") || "";
+      textEl.innerHTML = markedCopy(spot.getAttribute("data-copy") || "", spot.getAttribute("data-hl") || "");
+    };
+
+    const paint = () => {
+      spots.forEach((item, i) => {
+        const on = i === index;
         item.classList.toggle("is-active", on);
         item.setAttribute("aria-pressed", on ? "true" : "false");
       });
-      if (numEl) numEl.textContent = spot.getAttribute("data-num") || "";
-      textEl.textContent = spot.getAttribute("data-text") || "";
+      const zone = spots[index].getAttribute("data-zone");
+      pills.forEach((pill) => {
+        const id = pill.getAttribute("data-pill");
+        pill.classList.toggle("is-active", id === zone);
+        pill.classList.toggle("is-seen", visited.has(id));
+      });
+      tags.forEach((tag) => {
+        tag.classList.toggle("is-on", tag.getAttribute("data-tag") === zone);
+      });
+      if (countEl) countEl.textContent = `${index + 1} / ${spots.length}`;
+      if (cta) cta.hidden = visited.size < spots.length;
     };
 
-    spots.forEach((spot) => {
-      spot.addEventListener("click", () => setZone(spot));
+    const setZone = (nextIndex, { animate = true, scroll = false } = {}) => {
+      const total = spots.length;
+      const nextSpotIndex = (nextIndex + total) % total;
+      const spot = spots[nextSpotIndex];
+      if (!spot || animating) return;
+      index = nextSpotIndex;
+      visited.add(spot.getAttribute("data-zone"));
+
+      const apply = () => {
+        render(spot);
+        paint();
+        if (scroll && window.matchMedia("(max-width: 960px)").matches) {
+          root.querySelector(".body-map-panel")?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
+        }
+      };
+
+      if (!animate || reduceMotion || !swap) {
+        apply();
+        return;
+      }
+
+      animating = true;
+      swap.classList.remove("is-enter");
+      swap.classList.add("is-leave");
+      window.setTimeout(() => {
+        apply();
+        swap.classList.remove("is-leave");
+        swap.classList.add("is-enter");
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            swap.classList.remove("is-enter");
+            animating = false;
+          });
+        });
+      }, 180);
+    };
+
+    spots.forEach((spot, i) => {
+      spot.addEventListener("click", () => setZone(i, { scroll: true }));
     });
+    pills.forEach((pill) => {
+      pill.addEventListener("click", () => {
+        const i = spots.findIndex((spot) => spot.getAttribute("data-zone") === pill.getAttribute("data-pill"));
+        if (i >= 0) setZone(i, { scroll: true });
+      });
+    });
+    prev?.addEventListener("click", () => setZone(index - 1));
+    next?.addEventListener("click", () => setZone(index + 1));
+
+    setZone(1, { animate: false });
   });
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
