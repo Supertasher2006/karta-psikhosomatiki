@@ -521,10 +521,71 @@
     if (!spots.length || !textEl) return;
 
     const tags = Array.from(root.querySelectorAll(".body-map-tag"));
+    const rabbit = root.querySelector("[data-body-rabbit]");
     const visited = new Set();
     let index = 1;
     let animating = false;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const DISCOUNT_KEY = "karta-rabbit-discount";
+    const formatRub = (value) => `${Number(value).toLocaleString("ru-RU")} ₽`;
+
+    const rabbitModal = document.querySelector("[data-rabbit-modal]");
+    const closeRabbitModal = () => {
+      if (!rabbitModal) return;
+      rabbitModal.hidden = true;
+      if (document.getElementById("pay-modal")?.hidden !== false) {
+        document.body.style.overflow = "";
+      }
+    };
+    const openRabbitModal = () => {
+      if (!rabbitModal) return;
+      rabbitModal.hidden = false;
+      document.body.style.overflow = "hidden";
+      rabbitModal.querySelector(".btn[data-rabbit-close]")?.focus();
+    };
+    rabbitModal?.querySelectorAll("[data-rabbit-close]").forEach((el) => {
+      el.addEventListener("click", closeRabbitModal);
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && rabbitModal && !rabbitModal.hidden) {
+        closeRabbitModal();
+      }
+    });
+
+    const paintDiscount = () => {
+      document.querySelectorAll("[data-pay-open]").forEach((btn) => {
+        const base = Number(btn.getAttribute("data-price-base") || btn.getAttribute("data-price")) || 0;
+        btn.setAttribute("data-price-base", String(base));
+        const next = Math.round(base * 0.95);
+        btn.setAttribute("data-price", String(next));
+        const card = btn.closest(".tariff-card");
+        if (!card) return;
+        card.classList.add("has-discount");
+        const priceEl = card.querySelector(".tariff-card-price");
+        if (priceEl && !priceEl.querySelector(".tariff-price-old")) {
+          const old = document.createElement("span");
+          old.className = "tariff-price-old";
+          old.textContent = formatRub(base);
+          priceEl.replaceChildren(old, document.createTextNode(formatRub(next)));
+        }
+        if (!card.querySelector(".tariff-discount-flag")) {
+          const flag = document.createElement("span");
+          flag.className = "tariff-discount-flag";
+          flag.textContent = "Скидка 5%";
+          priceEl?.insertAdjacentElement("beforebegin", flag);
+        }
+      });
+    };
+
+    const applyRabbitDiscount = () => {
+      sessionStorage.setItem(DISCOUNT_KEY, "1");
+      paintDiscount();
+      openRabbitModal();
+    };
+
+    if (sessionStorage.getItem(DISCOUNT_KEY) === "1") {
+      paintDiscount();
+    }
 
     const escapeHtml = (value) =>
       value.replace(/[&<>"']/g, (char) => ({
@@ -565,6 +626,11 @@
       tags.forEach((tag) => {
         tag.classList.toggle("is-on", tag.getAttribute("data-tag") === zone);
       });
+      if (rabbit) {
+        const showRabbit = zone === "heart";
+        rabbit.classList.toggle("is-in", showRabbit);
+        rabbit.setAttribute("aria-hidden", showRabbit ? "false" : "true");
+      }
       if (countEl) countEl.textContent = `${index + 1} / ${spots.length}`;
       if (cta) cta.hidden = visited.size < spots.length;
     };
@@ -609,6 +675,10 @@
     spots.forEach((spot, i) => {
       spot.addEventListener("click", () => setZone(i, { scroll: true }));
     });
+    rabbit?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      applyRabbitDiscount();
+    });
     pills.forEach((pill) => {
       pill.addEventListener("click", () => {
         const i = spots.findIndex((spot) => spot.getAttribute("data-zone") === pill.getAttribute("data-pill"));
@@ -645,7 +715,43 @@
 
   window.setTimeout(() => {
     document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => {
+      if (el.classList.contains("results-list")) return;
       el.classList.add("is-visible");
     });
   }, 900);
+
+  window.setTimeout(() => {
+    document.querySelectorAll(".results-list.reveal-stagger").forEach((el) => {
+      el.classList.add("is-visible");
+    });
+  }, 8000);
+
+  const smSvg = document.getElementById("smSvg");
+  if (smSvg) {
+    const DONE = 3;
+    const PTS = [[36, 200], [96, 130], [160, 180], [215, 105], [268, 160], [318, 95], [364, 40]];
+    const LAB = ["Эмоции", "Органы", "Спина", "Цикл", "Вес", "Лечение", "Итог"];
+    const P = (i) => PTS[Math.max(0, Math.min(PTS.length - 1, i))];
+    let h = "";
+    for (let i = 0; i < PTS.length - 1; i += 1) {
+      const [p0, p1, p2, p3] = [P(i - 1), P(i), P(i + 1), P(i + 2)];
+      const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+      const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+      const done = i < DONE - 1;
+      h += `<path class="seg ${done ? "done s" + (i + 1) : "todo"}" pathLength="1" d="M${p1} C${c1} ${c2} ${p2}"/>`;
+    }
+    PTS.forEach(([x, y], i) => {
+      const done = i < DONE;
+      const cur = i === DONE - 1;
+      const last = i === PTS.length - 1;
+      const r = last ? 20 : 17;
+      const anchor = last ? "text-anchor=\"end\"" : "";
+      h += `<g class="n ${done ? "done" : ""} ${cur ? "cur" : ""} ${last ? "last" : ""}">
+        ${cur ? `<circle class="pulse" cx="${x}" cy="${y}" r="${r}"/>` : ""}
+        <circle class="base" cx="${x}" cy="${y}" r="${r}"/>
+        <text class="num" x="${x}" y="${y + 5}">${done && !cur ? "✓" : i + 1}</text>
+        <text class="lab" x="${last ? x + 8 : x}" y="${y + r + 18}" ${anchor}>${LAB[i]}</text></g>`;
+    });
+    smSvg.innerHTML = h;
+  }
 })();

@@ -7,7 +7,7 @@
   <meta name="description" content="Если обследования в порядке, а вам всё равно плохо — за 7 дней вы разберётесь в сигналах своего тела. Курс врача Галины Тюлис с 25-летним стажем." />
   <link rel="preload" href="media/hero.webp" as="image" />
   <link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" />
-  <link rel="stylesheet" href="styles.css?v=100" />
+  <link rel="stylesheet" href="styles.css?v=132" />
 </head>
 <body>
   <header class="site-header" id="top">
@@ -27,7 +27,6 @@
   </header>
 
   <main>
-    <!-- 1. Hero -->
     <section class="hero" id="hero">
       <div class="hero-bg" aria-hidden="true">
         <img class="hero-image" src="media/hero.webp" alt="" fetchpriority="high" decoding="async" />
@@ -36,7 +35,8 @@
       <div class="hero-content">
         <p class="eyebrow">Курс врача с 25-летним стажем</p>
         <h1 class="brand-title">Карта психосоматики тела</h1>
-        <p class="hero-lead">Обследования в порядке, а вам всё равно плохо? Тело что-то говорит, но этот язык вам никто не объяснил? За 7 дней вы получите карту своих сигналов и научитесь замечать их раньше, чем появится боль.</p>
+        <p class="hero-lead">Анализы в&nbsp;норме, рекомендации врача выполняете, становится легче, но через время симптомы возвращаются? Часто это сигнал, что тело реагирует не&nbsp;только на&nbsp;физические причины, но&nbsp;и&nbsp;на&nbsp;эмоциональное напряжение, которое остаётся за&nbsp;кадром.</p>
+        <p class="hero-sub">Курс «Карта психосоматики тела» помогает увидеть эту скрытую связь: какие зоны тела «откликаются» на&nbsp;повторяющийся стресс и&nbsp;как мягко работать с&nbsp;этими реакциями, чтобы улучшение сохранялось дольше.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#tariffs">Хочу понять своё тело</a>
         </div>
@@ -47,255 +47,11 @@
           <li>поддержка, чтобы не бросить на середине</li>
         </ul>
       </div>
-      <a class="scroll-hint" href="#problem" aria-label="Дальше">
+      <a class="scroll-hint" href="#program" aria-label="Дальше">
         <span></span>
       </a>
     </section>
 
-    <!-- 2. Problem -->
-    <section class="section problem" id="problem">
-      <div class="container problem-wrap reveal">
-        <h2 class="problem-title">Если тело говорит с вами через <span class="trigger-word">симптомы</span>…</h2>
-
-        <div class="problem-stage">
-          <div class="cycle" aria-label="Замкнутый круг симптомов">
-            <div class="cycle-disc" aria-hidden="true"></div>
-            <svg class="cycle-arrows" viewBox="0 0 400 400" fill="none" aria-hidden="true">
-              <defs>
-                <marker id="cycleArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                  <path d="M1 1.5 L8.5 5 L1 8.5" fill="none" stroke="#8b5e4b" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                </marker>
-              </defs>
-              <!-- дуги между подписями, без пересечения текста -->
-              <path d="M235 95 C290 105 305 150 305 175" stroke="#8b5e4b" stroke-width="1.5" stroke-linecap="round" marker-end="url(#cycleArrow)" />
-              <path d="M305 225 C305 260 280 300 235 310" stroke="#8b5e4b" stroke-width="1.5" stroke-linecap="round" marker-end="url(#cycleArrow)" />
-              <path d="M165 310 C120 300 95 260 95 225" stroke="#8b5e4b" stroke-width="1.5" stroke-linecap="round" marker-end="url(#cycleArrow)" />
-              <path d="M95 175 C95 140 120 105 165 95" stroke="#8b5e4b" stroke-width="1.5" stroke-linecap="round" marker-end="url(#cycleArrow)" />
-            </svg>
-            <p class="cycle-item cycle-12">Вы обследуетесь</p>
-            <p class="cycle-item cycle-3">Выполняете рекомендации</p>
-            <p class="cycle-item cycle-6">Становится легче</p>
-            <p class="cycle-item cycle-9">Симптомы возвращаются</p>
-            <p class="cycle-center">Замкнутый круг?</p>
-
-          </div>
-
-          <figure class="problem-figure">
-            <img src="media/contour.webp" alt="" loading="lazy" decoding="async" />
-            <span class="silhouette-shine" aria-hidden="true"></span>
-            <svg class="silhouette-trace" viewBox="0 0 541 1024" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-              <defs>
-                <linearGradient id="silhouetteGold" x1="12%" y1="0%" x2="88%" y2="100%">
-                  <stop offset="0%" stop-color="#fff6d2" />
-                  <stop offset="28%" stop-color="#ffe9a8" />
-                  <stop offset="54%" stop-color="#e5b869" />
-                  <stop offset="100%" stop-color="#c9a227" />
-                </linearGradient>
-                <filter id="silhouetteGlow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="3.2" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-              <path class="silhouette-trace-line" pathLength="1000" d="M150.3 0 L125.7 60 L126 71 L117.9 102 L121.5 111 L116.7 135 L115.1 177 L119.8 192 L116.9 201 L134 297 L139.3 307 L139.3 339 L131.7 371 L134.1 377 L124.8 386 L100.9 440 L52.2 506 L45.6 522 L45.9 535 L60.9 557 L105.4 583 L116.5 594 L122.5 617 L116.3 645 L118.6 648 L137.8 660 L142.3 664 L140.8 667 L148.1 672 L176.7 684 L152 694 L145.6 711 L152.2 728 L168.6 742 L178.9 756 L184.5 814 L199.7 841 L222.6 851 L259.8 860 L262.8 862 L260.6 864 Q340 856 423.1 873 L443.1 903 L461.2 947 L465.9 981 L461.1 990 L458.2 1011 L479.5 1020 L479.5 1023" />
-              <path class="silhouette-trace-flow" pathLength="1000" d="M150.3 0 L125.7 60 L126 71 L117.9 102 L121.5 111 L116.7 135 L115.1 177 L119.8 192 L116.9 201 L134 297 L139.3 307 L139.3 339 L131.7 371 L134.1 377 L124.8 386 L100.9 440 L52.2 506 L45.6 522 L45.9 535 L60.9 557 L105.4 583 L116.5 594 L122.5 617 L116.3 645 L118.6 648 L137.8 660 L142.3 664 L140.8 667 L148.1 672 L176.7 684 L152 694 L145.6 711 L152.2 728 L168.6 742 L178.9 756 L184.5 814 L199.7 841 L222.6 851 L259.8 860 L262.8 862 L260.6 864 Q340 856 423.1 873 L443.1 903 L461.2 947 L465.9 981 L461.1 990 L458.2 1011 L479.5 1020 L479.5 1023" />
-              <path class="silhouette-trace-spark" pathLength="1000" d="M150.3 0 L125.7 60 L126 71 L117.9 102 L121.5 111 L116.7 135 L115.1 177 L119.8 192 L116.9 201 L134 297 L139.3 307 L139.3 339 L131.7 371 L134.1 377 L124.8 386 L100.9 440 L52.2 506 L45.6 522 L45.9 535 L60.9 557 L105.4 583 L116.5 594 L122.5 617 L116.3 645 L118.6 648 L137.8 660 L142.3 664 L140.8 667 L148.1 672 L176.7 684 L152 694 L145.6 711 L152.2 728 L168.6 742 L178.9 756 L184.5 814 L199.7 841 L222.6 851 L259.8 860 L262.8 862 L260.6 864 Q340 856 423.1 873 L443.1 903 L461.2 947 L465.9 981 L461.1 990 L458.2 1011 L479.5 1020 L479.5 1023" />
-            </svg>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section await" id="await">
-      <div class="container await-wrap reveal">
-        <h2 class="await-title">Чему вы научитесь на курсе</h2>
-        <div class="await-questions">
-          <article>
-            <span class="await-num">01</span>
-            <h3>Понимать свои эмоции</h3>
-            <p>Увидите <span class="await-mark">связь эмоций и тела</span> и научитесь бережно с&nbsp;ней обращаться.</p>
-          </article>
-          <article>
-            <span class="await-num">02</span>
-            <h3>Управлять напряжением</h3>
-            <p>Освоите мягкие телесные практики, которые помогают <span class="await-mark">снять стресс</span> и&nbsp;вернуть внутреннюю опору в&nbsp;любой момент.</p>
-          </article>
-          <article>
-            <span class="await-num">03</span>
-            <h3>Слышать сигналы тела</h3>
-            <p>Научитесь бережно заботиться о&nbsp;себе, <span class="await-mark">замечать усталость</span> и следовать рекомендациям&nbsp;врача.</p>
-          </article>
-        </div>
-        <div class="await-plaque">
-          <blockquote class="await-quote">
-            <span class="await-quote-mark" aria-hidden="true">«</span>
-            <p>«Иногда кажется, что организм пытается сказать <span class="await-accent">нечто большее</span>»</p>
-            <p class="await-quote-note">Курс поможет внимательнее прислушиваться к сигналам тела и лучше понимать себя. Это <span class="await-soft">дополнение к медицинской помощи</span>, а не её замена.</p>
-          </blockquote>
-          <figure class="await-portrait">
-            <img src="media/author.webp" alt="Галина Тюлис" loading="lazy" decoding="async" />
-            <figcaption>
-              Галина Тюлис
-              <span>автор курса</span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. Quote -->
-    <section class="quote-section" id="quote">
-      <img src="media/quote.webp" alt="" loading="lazy" decoding="async" />
-    </section>
-
-    <!-- Who it's for -->
-    <section class="section who" id="who">
-      <div class="container">
-        <div class="section-head who-head reveal">
-          <h2>Кому подойдёт?</h2>
-        </div>
-        <div class="who-grid reveal-stagger">
-          <article class="who-card">
-            <img src="media/who-01.webp" alt="" loading="lazy" decoding="async" />
-            <p>Тем, кто следит за здоровьем, выполняет рекомендации, но снова и снова возвращается к <span class="hl">одной и той же проблеме</span>.</p>
-          </article>
-          <article class="who-card">
-            <img src="media/who-02.webp" alt="" loading="lazy" decoding="async" />
-            <p>Тем, кто чувствует напряжение в теле и хочет понять его причины <span class="hl">без сложных терминов</span>.</p>
-          </article>
-          <article class="who-card">
-            <img src="media/who-03.webp" alt="" loading="lazy" decoding="async" />
-            <p>Тем, кого беспокоят <span class="hl">телесные реакции на стресс</span>: ком в горле, тяжесть в груди, зажимы в шее и спине.</p>
-          </article>
-          <article class="who-card">
-            <img src="media/who-04.webp" alt="" loading="lazy" decoding="async" />
-            <p>Тем, кто ищет <span class="hl">понятные и безопасные</span> способы самопомощи и опирается на осознанность, а не на догадки.</p>
-          </article>
-          <article class="who-card">
-            <img src="media/who-05.webp" alt="" loading="lazy" decoding="async" />
-            <p>Тем, кто хочет дополнить заботу о теле: <span class="hl">не вместо врача, а вместе с ним</span>.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Uniqueness -->
-    <section class="section uniqueness" id="uniqueness">
-      <div class="container">
-        <div class="section-head uniqueness-head reveal">
-          <h2>В чём уникальность программы?</h2>
-        </div>
-        <div class="uniq-mosaic reveal">
-          <figure class="uniq-visual uniq-desert">
-            <img src="media/uniq-desert.webp" alt="" loading="lazy" decoding="async" />
-          </figure>
-          <div class="uniq-copy uniq-copy-01">
-            <p class="uniq-num">01</p>
-            <h3>Практические упражнения и техники без воды и вебинаров</h3>
-            <p>Мы сторонники практики — опираемся только на проверенный опыт. Лучше один раз пройти, чем 100 раз подумать.</p>
-          </div>
-          <div class="uniq-copy uniq-copy-02">
-            <p class="uniq-num">02</p>
-            <h3>Фокусные и самые эффективные направления терапии</h3>
-            <p>Для работы с психосоматическими заболеваниями.</p>
-          </div>
-          <figure class="uniq-visual uniq-magician">
-            <img src="media/uniq-magician.webp" alt="" loading="lazy" decoding="async" />
-          </figure>
-          <figure class="uniq-visual uniq-galina">
-            <img src="media/uniq-galina.webp" alt="" loading="lazy" decoding="async" />
-          </figure>
-          <div class="uniq-copy uniq-copy-03">
-            <p class="uniq-num">03</p>
-            <h3>Работа с персональным психологом</h3>
-            <p>С вами работает квалифицированный психолог 7 дней в неделю. С психологом вы можете обсуждать всё, что касается темы курса.</p>
-          </div>
-        </div>
-        <div class="uniqueness-actions reveal">
-          <a class="btn btn-primary btn-pulse" href="#tariffs">Выбрать тариф</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. Author -->
-    <section class="section author" id="author">
-      <div class="container author-layout reveal">
-        <figure class="author-photo">
-          <img src="media/author.webp" alt="Галина Тюлис" loading="lazy" decoding="async" />
-        </figure>
-        <div class="author-side">
-          <h2>Об авторе курса</h2>
-          <p class="author-name">Галина Тюлис</p>
-          <ul class="author-facts">
-            <li>Врач-дерматолог, психолог, специалист по психосоматике</li>
-            <li>Высшее образование: Башкирский государственный медицинский университет</li>
-            <li>Высшее образование: Башкирский государственный педагогический университет имени Акмуллы</li>
-            <li>Сертификат специалиста по дерматовенерологии</li>
-            <li>Профессиональная переподготовка: психолог</li>
-            <li>Профессиональная переподготовка: косметология</li>
-            <li>Повышение квалификации: трихология</li>
-          </ul>
-
-          <div class="author-diplomas" data-h-slider data-diploma-gallery>
-            <div class="diplomas-slider">
-              <div class="diplomas-track" data-h-track>
-                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть диплом врача, 1995">
-                  <img src="media/diploma-01.webp" alt="Диплом врача, лечебное дело, 1995" loading="lazy" decoding="async" />
-                  <span>Диплом врача, 1995</span>
-                </button>
-                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть удостоверение интернатуры по дерматовенерологии">
-                  <img src="media/diploma-02.webp" alt="Удостоверение интернатуры по дерматовенерологии" loading="lazy" decoding="async" />
-                  <span>Интернатура, дерматовенерология</span>
-                </button>
-                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть сертификат специалиста по дерматовенерологии">
-                  <img src="media/diploma-03.webp" alt="Сертификат специалиста по дерматовенерологии" loading="lazy" decoding="async" />
-                  <span>Сертификат специалиста</span>
-                </button>
-                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть диплом психолога">
-                  <img src="media/diploma-04.webp" alt="Диплом о профессиональной переподготовке, психолог" loading="lazy" decoding="async" />
-                  <span>Психолог</span>
-                </button>
-                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть диплом по косметологии">
-                  <img src="media/diploma-05.webp" alt="Диплом о профессиональной переподготовке, косметология" loading="lazy" decoding="async" />
-                  <span>Косметология</span>
-                </button>
-                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть удостоверение по косметологии">
-                  <img src="media/diploma-06.webp" alt="Удостоверение о повышении квалификации, косметология" loading="lazy" decoding="async" />
-                  <span>Повышение квалификации</span>
-                </button>
-                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть удостоверение по трихологии">
-                  <img src="media/diploma-07.webp" alt="Удостоверение о повышении квалификации, трихология" loading="lazy" decoding="async" />
-                  <span>Трихология</span>
-                </button>
-              </div>
-              <div class="diplomas-nav">
-                <button type="button" class="reviews-btn" data-h-prev aria-label="Предыдущий диплом">‹</button>
-                <button type="button" class="reviews-btn" data-h-next aria-label="Следующий диплом">›</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. Why created -->
-    <section class="section why" id="why">
-      <div class="container why-layout reveal">
-        <div class="why-text">
-          <h2>Почему я создала этот курс</h2>
-          <p>После <span class="why-years">25</span> лет врачебной практики я всё чаще встречала пациентов, у которых обследования и лечение давали лишь временное облегчение. Тело будто хранило историю, которую одними назначениями было не прочитать.</p>
-          <p>Так начался путь в научную психосоматику: <strong class="why-accent">не вместо медицины, а рядом с ней</strong>. Я захотела дать людям понятный язык, чтобы они могли замечать связь между эмоциями, стрессом и самочувствием, и бережнее заботиться о себе.</p>
-        </div>
-        <figure class="why-figure">
-          <img src="media/why.webp" alt="" loading="lazy" decoding="async" />
-        </figure>
-      </div>
-    </section>
-
-    <!-- 9. Program -->
     <section class="section program" id="program">
       <div class="container">
         <div class="section-head program-head reveal">
@@ -526,13 +282,188 @@
       </div>
     </section>
 
-    <!-- Outcome -->
-    <section class="section outcome" id="outcome">
+    <section class="section who" id="who">
       <div class="container">
-        <div class="section-head outcome-head reveal">
-          <h2>Какой будет результат</h2>
-          <p>Нажмите на точку, чтобы узнать, что изменится</p>
+        <div class="section-head who-head reveal">
+          <h2>Кому подойдёт?</h2>
         </div>
+        <div class="who-grid reveal-stagger">
+          <article class="who-card">
+            <img src="media/who-01.webp" alt="" loading="lazy" decoding="async" />
+            <p>Тем, кто следит за здоровьем, выполняет рекомендации, но возвращается к <span class="hl">одной и той же проблеме</span> снова и снова.</p>
+          </article>
+          <article class="who-card">
+            <img src="media/who-02.webp" alt="" loading="lazy" decoding="async" />
+            <p>Тем, кто чувствует напряжение в теле и хочет понять его причины <span class="hl">без сложных терминов</span>.</p>
+          </article>
+          <article class="who-card">
+            <img src="media/who-03.webp" alt="" loading="lazy" decoding="async" />
+            <p>Тем, кого беспокоят <span class="hl">телесные реакции на стресс</span>: ком в горле, тяжесть в груди, зажимы в шее и спине.</p>
+          </article>
+          <article class="who-card">
+            <img src="media/who-04.webp" alt="" loading="lazy" decoding="async" />
+            <p>Людям, которые ищут <span class="hl">понятные и безопасные</span> способы самопомощи и хотят опираться на осознанность, а не на догадки.</p>
+          </article>
+          <article class="who-card">
+            <img src="media/who-05.webp" alt="" loading="lazy" decoding="async" />
+            <p>Тем, кто хочет дополнить заботу о теле: <span class="hl">не вместо врача, а вместе с ним</span>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section uniqueness" id="uniqueness">
+      <div class="container">
+        <div class="section-head uniqueness-head reveal">
+          <h2>В чём уникальность программы?</h2>
+        </div>
+        <div class="uniq-mosaic reveal">
+          <figure class="uniq-visual uniq-desert">
+            <img src="media/uniq-desert.webp" alt="" loading="lazy" decoding="async" />
+          </figure>
+          <div class="uniq-copy uniq-copy-01">
+            <p class="uniq-num">01</p>
+            <h3>Практические упражнения и техники без воды и вебинаров</h3>
+            <p>Мы сторонники практики — опираемся только на проверенный опыт. Лучше один раз пройти, чем 100 раз подумать.</p>
+          </div>
+          <div class="uniq-copy uniq-copy-02">
+            <p class="uniq-num">02</p>
+            <h3>Фокусные и самые эффективные направления терапии</h3>
+            <p>Для работы с психосоматическими заболеваниями.</p>
+          </div>
+          <figure class="uniq-visual uniq-magician">
+            <img src="media/uniq-magician.webp" alt="" loading="lazy" decoding="async" />
+            <p class="uniq-thought">А где кролик?<i aria-hidden="true"></i><i aria-hidden="true"></i></p>
+          </figure>
+          <figure class="uniq-visual uniq-galina">
+            <img src="media/uniq-galina.webp" alt="" loading="lazy" decoding="async" />
+          </figure>
+          <div class="uniq-copy uniq-copy-03">
+            <p class="uniq-num">03</p>
+            <h3>Работа с персональным психологом</h3>
+            <p>С вами работает квалифицированный психолог 7 дней в неделю. С психологом вы можете обсуждать всё, что касается темы курса.</p>
+          </div>
+        </div>
+        <div class="uniqueness-actions reveal">
+          <a class="btn btn-primary btn-pulse" href="#tariffs">Выбрать тариф</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section await" id="await">
+      <div class="container await-wrap reveal">
+        <h2 class="await-title">Чему вы научитесь на курсе</h2>
+        <div class="await-questions">
+          <article>
+            <span class="await-num">01</span>
+            <h3>Понимать свои эмоции</h3>
+            <p>Увидите <span class="await-mark">связь эмоций и тела</span> и научитесь бережно с&nbsp;ней обращаться.</p>
+          </article>
+          <article>
+            <span class="await-num">02</span>
+            <h3>Управлять напряжением</h3>
+            <p>Освоите мягкие телесные практики, которые помогают <span class="await-mark">снять стресс</span> и&nbsp;вернуть внутреннюю опору в&nbsp;любой момент.</p>
+          </article>
+          <article>
+            <span class="await-num">03</span>
+            <h3>Слышать сигналы тела</h3>
+            <p>Научитесь бережно заботиться о&nbsp;себе, <span class="await-mark">замечать усталость</span> и следовать рекомендациям&nbsp;врача.</p>
+          </article>
+        </div>
+        <div class="await-plaque">
+          <blockquote class="await-quote">
+            <span class="await-quote-mark" aria-hidden="true">«</span>
+            <p>«Иногда кажется, что организм пытается сказать <span class="await-accent">нечто большее</span>»</p>
+            <p class="await-quote-note">Курс поможет внимательнее прислушиваться к сигналам тела и лучше понимать себя. Это <span class="await-soft">дополнение к медицинской помощи</span>, а не её замена.</p>
+          </blockquote>
+          <figure class="await-portrait">
+            <img src="media/author.webp" alt="Галина Тюлис" loading="lazy" decoding="async" />
+            <figcaption>
+              Галина Тюлис
+              <span>автор курса</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section results" id="results">
+      <div class="container">
+        <div class="section-head results-head reveal">
+          <h2>Что вы сможете после курса</h2>
+        </div>
+        <ol class="results-list reveal-stagger">
+          <li>
+            <div class="results-meta">
+              <span class="results-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M2 12c2.6-5.2 6.2-7.5 10-7.5S19.4 6.8 22 12c-2.6 5.2-6.2 7.5-10 7.5S4.6 17.2 2 12Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.35" stroke="currentColor" stroke-width="1.7"/></svg>
+              </span>
+              <span class="results-num">01</span>
+            </div>
+            <h3>Замечать</h3>
+            <p><span class="hl">первые признаки</span> телесного напряжения и понимать, с какой эмоцией или стрессовой ситуацией это может быть связано.</p>
+          </li>
+          <li class="results-card-accent">
+            <div class="results-meta">
+              <span class="results-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M15 5.8v15M9 3.2v15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.6-1.8A1 1 0 0 1 21 4.6v12.8a1 1 0 0 1-.55.9l-4.55 2.27a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0L3.5 20.27A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9l4.55-2.27a2 2 0 0 1 1.8 0z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="results-num">02</span>
+            </div>
+            <div class="results-mini" aria-hidden="true">
+              <img src="media/results-body.webp" alt="" width="1348" height="2190" loading="lazy" decoding="async" />
+            </div>
+            <h3>Использовать</h3>
+            <p>простую <span class="hl">карту тела</span> как ориентир, чтобы быстрее находить зоны дискомфорта.</p>
+          </li>
+          <li>
+            <div class="results-meta">
+              <span class="results-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M18 11V6a2 2 0 0 0-4 0v7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M14 10.5V4a2 2 0 0 0-4 0v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M10 9.6V6a2 2 0 1 0-4 0v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-1.4-5.6-3.6L4 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="results-num">03</span>
+            </div>
+            <h3>Применять</h3>
+            <p>мягкие техники самопомощи для <span class="hl">снижения напряжения</span> в шее, спине, груди.</p>
+          </li>
+          <li>
+            <div class="results-meta">
+              <span class="results-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 19s-7.2-4.3-7.2-9.1A3.9 3.9 0 0 1 12 7.4a3.9 3.9 0 0 1 7.2 2.5C19.2 14.7 12 19 12 19Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="results-num">04</span>
+            </div>
+            <h3>Осознанно выбирать</h3>
+            <p>способы <span class="hl">заботы о себе</span> в стрессовые периоды, опираясь на понимание своих реакций.</p>
+          </li>
+          <li>
+            <div class="results-meta">
+              <span class="results-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.4" stroke="currentColor" stroke-width="1.6"/><path d="M12 8.2V12.2l2.8 1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="results-num">05</span>
+            </div>
+            <h3>Пользоваться</h3>
+            <p>простыми практиками в моменте, чтобы <span class="hl">не ждать обострения</span>, а работать с напряжением сразу.</p>
+          </li>
+          <li>
+            <div class="results-meta">
+              <span class="results-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 4v16M7.2 20h9.6M5 8h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M5 8 2.4 13.6h5.2L5 8ZM19 8l-2.6 5.6h5.2L19 8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="results-num">06</span>
+            </div>
+            <h3>Выстроить</h3>
+            <p>более <span class="hl">целостный подход</span> к себе: соединив медицинские рекомендации с осознанием телесных реакций на стресс.</p>
+          </li>
+        </ol>
+        <aside class="results-note reveal">
+          <span class="results-note-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 13c0 5-3.5 7.5-8 8.5-4.5-1-8-3.5-8-8.5V6l8-3 8 3v7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2.2 2.2L15.4 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <p><strong>Важно.</strong> Курс не отменяет лечение и рекомендации врача. Он помогает увидеть эмоциональный слой, который может поддерживать возвращение симптомов, и даёт мягкие инструменты работы с ним. Это образовательная программа для самопознания и самопомощи.</p>
+        </aside>
+        <p class="outcome-hint reveal">Нажмите на точку, чтобы узнать, что изменится</p>
         <div class="body-map reveal" data-body-map>
           <div class="body-map-stage">
             <img src="media/body-map.webp" alt="Карта тела. Нажмите на зону, чтобы прочитать результат." width="674" height="1095" loading="lazy" decoding="async" />
@@ -584,6 +515,9 @@
               <span class="body-map-tag-line"></span>
               <span class="body-map-tag-label">Ноги</span>
             </div>
+            <button type="button" class="body-rabbit" data-body-rabbit aria-hidden="true" aria-label="Кролик. Нажмите, чтобы получить скидку 5%">
+              <img src="media/rabbit.webp" alt="" width="216" height="288" decoding="async" />
+            </button>
           </div>
           <div class="body-map-panel">
             <div class="body-map-card">
@@ -613,206 +547,154 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- 10. What's included -->
-    <section class="section included" id="included">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>Что входит в курс</h2>
-          <p>Всё, чтобы знания не остались теорией и не забылись через пару дней.</p>
+        <div class="format-block">
+          <div class="section-head format-head reveal">
+            <h2>Формат и условия</h2>
+          </div>
+          <ul class="format-tiles reveal-stagger">
+            <li>
+              <span class="results-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 15.5c2.2-2.6 4.4-3.9 8-3.9s5.8 1.3 8 3.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M6.8 12.2A8.4 8.4 0 0 1 12 10.4c1.9 0 3.6.6 5.2 1.8M9.4 9A6 6 0 0 1 12 8.2c.9 0 1.8.2 2.6.7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="18" r="1.15" fill="currentColor"/></svg>
+              </span>
+              <h3>Онлайн</h3>
+              <p>Учитесь в удобном темпе</p>
+            </li>
+            <li>
+              <span class="results-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M8 11V8.2A4 4 0 0 1 16 8.2V11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><rect x="5.5" y="11" width="13" height="9.2" rx="2.2" stroke="currentColor" stroke-width="1.7"/></svg>
+              </span>
+              <h3>Доступ остаётся с&nbsp;вами</h3>
+              <p>К материалам можно вернуться позже</p>
+            </li>
+            <li>
+              <span class="results-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2.2" stroke="currentColor" stroke-width="1.7"/><path d="m10 9.5 5 2.5-5 2.5V9.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              </span>
+              <h3>Видео и практика</h3>
+              <p>Короткие уроки, задания и карта тела в формате рабочей тетради</p>
+            </li>
+            <li class="format-tile-accent">
+              <span class="results-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M7 8.2h7.4A2.6 2.6 0 0 1 17 10.8v5.4A2.6 2.6 0 0 1 14.4 18.8H7A2.6 2.6 0 0 1 4.4 16.2v-5.4A2.6 2.6 0 0 1 7 8.2Z" stroke="currentColor" stroke-width="1.7"/><path d="m17 11.2 3.2-1.7v7l-3.2-1.7" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              </span>
+              <h3>Прямые эфиры</h3>
+              <p>Встречи с экспертом</p>
+            </li>
+            <li>
+              <span class="results-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5.5 16.2 4.2 19.4 8 17.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.2 12a7.2 7.2 0 1 1-3.2-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M8.4 10.2h7.2M8.4 13.2h4.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              </span>
+              <h3>Поддержка</h3>
+              <p>Ответы на вопросы по материалам и практикам</p>
+            </li>
+          </ul>
         </div>
-        <ul class="included-list reveal-stagger">
-          <li>
-            <strong>7 подробных видеоуроков</strong>
-            <span>по 45 минут — можно смотреть вечером после работы</span>
-          </li>
-          <li>
-            <strong>Авторская рабочая тетрадь</strong>
-            <span>практики, вопросы и задания, чтобы курс не остался ещё одним видео, которое посмотрели и забыли</span>
-          </li>
-          <li>
-            <strong>Закрытый чат поддержки</strong>
-            <span>пространство, где вас поймут без долгих объяснений</span>
-          </li>
-          <li>
-            <strong>Практики на каждый день</strong>
-            <span>короткие упражнения, которые встраиваются в обычную жизнь</span>
-          </li>
-          <li>
-            <strong>Карта психосоматики и схемы</strong>
-            <span>наглядные ориентиры, к которым можно возвращаться</span>
-          </li>
-          <li>
-            <strong>Именной сертификат</strong>
-            <span>о прохождении курса</span>
-          </li>
-        </ul>
-      </div>
-    </section>
 
-    <!-- 11. Workbook -->
-    <section class="section workbook" id="workbook">
-      <div class="container workbook-layout reveal">
-        <div class="workbook-text">
-          <h2>Рабочая тетрадь</h2>
-          <p>Без тетради курс легко забыть. Вопросы, практики и задания помогают собрать свою картину. Через неделю вы будете видеть триггеры иначе — потому что запишете их, а не просто прокрутите в голове.</p>
-        </div>
-        <div class="flipbook" data-flipbook>
-          <div class="flipbook-stage">
-            <img class="flip-page is-active" src="media/notebook-01.webp" alt="Страница рабочей тетради 1" data-index="0" loading="lazy" decoding="async" />
-            <img class="flip-page" src="media/notebook-02.webp" alt="Страница рабочей тетради 2" data-index="1" loading="lazy" decoding="async" />
-            <img class="flip-page" src="media/notebook-03.webp" alt="Страница рабочей тетради 3" data-index="2" loading="lazy" decoding="async" />
-            <img class="flip-page" src="media/notebook-04.webp" alt="Страница рабочей тетради 4" data-index="3" loading="lazy" decoding="async" />
+        <div class="enroll reveal">
+          <div class="enroll-copy">
+            <h2>Начните с одного шага</h2>
+            <p>Понимание своего тела остаётся с вами на всю жизнь. Начните с малого: заметьте один зажим, поймите одну эмоцию, снимите одно напряжение.</p>
+            <a class="btn btn-primary" href="#tariffs">Записаться на курс</a>
+            <div class="enroll-consult">
+              <a class="enroll-link" href="mailto:yadarika@mail.ru?subject=%D0%91%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F">Оставить заявку на консультацию →</a>
+              <p>Бесплатная консультация: расскажем подробнее и поможем понять, подходит ли вам программа.</p>
+            </div>
+            <p class="enroll-legal">Курс не заменяет консультацию врача</p>
           </div>
-          <div class="flipbook-controls">
-            <button type="button" class="flip-btn" data-flip="-1" aria-label="Предыдущая страница">‹</button>
-            <span class="flip-counter" data-flip-counter>1 / 4</span>
-            <button type="button" class="flip-btn" data-flip="1" aria-label="Следующая страница">›</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 13. Reviews -->
-    <section class="section reviews" id="reviews">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>Отзывы</h2>
-          <p>То, что меняется, когда человек перестаёт бороться с телом.</p>
-        </div>
-        <div class="reviews-slider reveal" data-h-slider>
-          <div class="reviews-track" data-h-track>
-            <figure class="review-card">
-              <span class="review-quote-mark" aria-hidden="true">«</span>
-              <blockquote>Я наконец перестала бороться с симптомами и начала слышать, о чём говорит тело. Рядом с лечением появилась спокойная опора — и меньше паники «а вдруг опять».</blockquote>
-              <figcaption><span class="review-initial">Е</span>лена, 42</figcaption>
-            </figure>
-            <figure class="review-card">
-              <span class="review-quote-mark" aria-hidden="true">«</span>
-              <blockquote>Никакой эзотерики и поиска виноватых. Ясный взгляд врача и практики, которые вошли в обычную жизнь, а не только в утренние ритуалы.</blockquote>
-              <figcaption><span class="review-initial">М</span>арина, 38</figcaption>
-            </figure>
-            <figure class="review-card">
-              <span class="review-quote-mark" aria-hidden="true">«</span>
-              <blockquote>Рабочая тетрадь стала моим ежедневным инструментом. Через неделю я уже видела свои триггеры иначе — не «просто стресс», а конкретные ситуации.</blockquote>
-              <figcaption><span class="review-initial">О</span>льга, 51</figcaption>
-            </figure>
-            <figure class="review-card">
-              <span class="review-quote-mark" aria-hidden="true">«</span>
-              <blockquote>Мне важно, что курс не противопоставляет психосоматику медицине. Это дало ощущение безопасности: можно лечиться и при этом понимать себя.</blockquote>
-              <figcaption><span class="review-initial">А</span>нна, 45</figcaption>
-            </figure>
-          </div>
-          <div class="reviews-nav">
-            <button type="button" class="reviews-btn" data-h-prev aria-label="Предыдущий отзыв">‹</button>
-            <button type="button" class="reviews-btn" data-h-next aria-label="Следующий отзыв">›</button>
+          <div class="enroll-figure">
+            <div class="sm" id="sm">
+              <div class="top">
+                <span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg></span>
+                <b>Ваша карта состояния</b>
+              </div>
+              <svg viewBox="0 0 400 260" id="smSvg" aria-label="Путь из семи дней, пройдено три"></svg>
+              <div class="foot"><span class="pill">День 3 из 7</span><span class="bar"><i></i></span></div>
+              <p class="note">К седьмому дню у вас будет собственная карта: зоны, сигналы и практики, которые помогают именно вам.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 14. FAQ -->
-    <section class="section faq" id="faq">
-      <div class="container narrow">
-        <div class="section-head reveal">
-          <h2>Частые вопросы</h2>
-        </div>
-        <div class="faq-list reveal">
-          <details open>
-            <summary>Можно ли проходить без психологического образования?</summary>
-            <p>Да. Курс написан простым языком для взрослых без специальной подготовки. Никаких учебников и чужого жаргона — только то, что можно применить к своей жизни с первого дня.</p>
-          </details>
-          <details>
-            <summary>Если врачи ничего не находят, а мне не легче?</summary>
-            <p>Курс как раз для таких ситуаций. Он не ставит диагнозы и не отменяет обследования. Он помогает увидеть то, что анализы часто не показывают: связь эмоций, стресса и самочувствия.</p>
-          </details>
-          <details>
-            <summary>Если у меня хроническое заболевание?</summary>
-            <p>Курс не заменяет лечение. Он помогает понять, какие факторы могут влиять на самочувствие, и выстроить более бережную заботу о себе — рядом с назначениями врача, а не вместо них.</p>
-          </details>
-          <details>
-            <summary>Сколько времени нужно в день?</summary>
-            <p>Около 45–70 минут: урок и запись в тетради. Практики короткие — их можно встроить в обычный вечер, не откладывая всё до отпуска.</p>
-          </details>
-          <details>
-            <summary>Это не эзотерика и не «все болезни от мыслей»?</summary>
-            <p>Нет. Никаких таблиц «обиделся — заболел печень» и поиска виноватых. Подход врача: связь стресса, эмоций и тела — без магии и без стыда.</p>
-          </details>
-          <details>
-            <summary>Курс заменяет врача?</summary>
-            <p>Нет. Это дополнение к медицинской помощи. Если тело подаёт сигналы — сначала к специалисту. Курс идёт рядом.</p>
-          </details>
-        </div>
-      </div>
-    </section>
+    <section class="section author" id="author">
+      <div class="container author-layout reveal">
+        <figure class="author-photo">
+          <img src="media/author.webp" alt="Галина Тюлис" loading="lazy" decoding="async" />
+        </figure>
+        <div class="author-side">
+          <h2>Об авторе курса</h2>
+          <p class="author-name">Галина Тюлис</p>
+          <ul class="author-facts">
+            <li>Врач-дерматолог, психолог, специалист по психосоматике</li>
+            <li>Высшее образование: Башкирский государственный медицинский университет</li>
+            <li>Высшее образование: Башкирский государственный педагогический университет имени Акмуллы</li>
+            <li>Сертификат специалиста по дерматовенерологии</li>
+            <li>Профессиональная переподготовка: психолог</li>
+            <li>Профессиональная переподготовка: косметология</li>
+            <li>Повышение квалификации: трихология</li>
+          </ul>
 
-    <!-- 17. Emotional -->
-    <section class="section emotional" id="emotional">
-      <div class="container narrow reveal">
-        <h2>За семь дней вы не станете другим человеком.</h2>
-        <p>Но вы можете впервые понять, о чём просит тело, и не откладывать это ещё на год.</p>
-      </div>
-    </section>
-
-    <!-- 18. Tariffs repeat -->
-    <section class="section tariffs-repeat" id="tariffs-repeat">
-      <div class="container center reveal">
-        <h2>Если узнали себя — не откладывайте</h2>
-        <a class="btn btn-primary btn-lg btn-pulse" href="#tariff-cards">Выбрать тариф</a>
-      </div>
-    </section>
-
-    <!-- 19. Org FAQ -->
-    <section class="section org-faq" id="org">
-      <div class="container narrow">
-        <div class="section-head reveal">
-          <h2>Организационные вопросы</h2>
-        </div>
-        <div class="faq-list reveal">
-          <details>
-            <summary>Если курс не подойдёт?</summary>
-            <p>Напишите в поддержку в течение 7 дней после оплаты — разберём ситуацию индивидуально.</p>
-          </details>
-          <details>
-            <summary>Когда откроется доступ?</summary>
-            <p>Сразу после оплаты. Письмо с доступом и инструкцией придёт на почту. Начинайте в удобный день: уроки открываются последовательно, в вашем темпе.</p>
-          </details>
-          <details>
-            <summary>Как проходит оплата?</summary>
-            <p>Безопасно онлайн. После оплаты вы получите письмо с доступом. Сохраните чек.</p>
-          </details>
-          <details>
-            <summary>Нужно ли проходить строго за 7 дней?</summary>
-            <p>Нет. Семь дней — это структура курса, а не жёсткий срок. Можно идти медленнее. Главное — не бросать тетрадь после первого урока.</p>
-          </details>
+          <div class="author-diplomas" data-h-slider data-diploma-gallery>
+            <div class="diplomas-slider">
+              <div class="diplomas-track" data-h-track>
+                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть диплом врача, 1995">
+                  <img src="media/diploma-01.webp" alt="Диплом врача, лечебное дело, 1995" loading="lazy" decoding="async" />
+                  <span>Диплом врача, 1995</span>
+                </button>
+                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть удостоверение интернатуры по дерматовенерологии">
+                  <img src="media/diploma-02.webp" alt="Удостоверение интернатуры по дерматовенерологии" loading="lazy" decoding="async" />
+                  <span>Интернатура, дерматовенерология</span>
+                </button>
+                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть сертификат специалиста по дерматовенерологии">
+                  <img src="media/diploma-03.webp" alt="Сертификат специалиста по дерматовенерологии" loading="lazy" decoding="async" />
+                  <span>Сертификат специалиста</span>
+                </button>
+                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть диплом психолога">
+                  <img src="media/diploma-04.webp" alt="Диплом о профессиональной переподготовке, психолог" loading="lazy" decoding="async" />
+                  <span>Психолог</span>
+                </button>
+                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть диплом по косметологии">
+                  <img src="media/diploma-05.webp" alt="Диплом о профессиональной переподготовке, косметология" loading="lazy" decoding="async" />
+                  <span>Косметология</span>
+                </button>
+                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть удостоверение по косметологии">
+                  <img src="media/diploma-06.webp" alt="Удостоверение о повышении квалификации, косметология" loading="lazy" decoding="async" />
+                  <span>Повышение квалификации</span>
+                </button>
+                <button class="diploma-card" type="button" data-diploma-open aria-label="Открыть удостоверение по трихологии">
+                  <img src="media/diploma-07.webp" alt="Удостоверение о повышении квалификации, трихология" loading="lazy" decoding="async" />
+                  <span>Трихология</span>
+                </button>
+              </div>
+              <div class="diplomas-nav">
+                <button type="button" class="reviews-btn" data-h-prev aria-label="Предыдущий диплом">‹</button>
+                <button type="button" class="reviews-btn" data-h-next aria-label="Следующий диплом">›</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Telegram -->
     <section class="section telegram" id="telegram">
-      <div class="container narrow reveal">
-        <h2>Телеграм</h2>
-        <p>Ведём телеграм. Помогаем узнать своё тело, понять и устранить жизненные проблемы.</p>
+      <div class="container">
+        <div class="section-head telegram-head reveal">
+          <h2>Телеграм</h2>
+          <p>Ведём телеграм. Помогаем узнать своё тело, понять и устранить жизненные проблемы.</p>
+        </div>
+        <article class="tg-card reveal">
+          <img class="tg-photo" src="media/author.webp" alt="Галина Тюлис" width="160" height="160" loading="lazy" decoding="async" />
+          <h3>Дерматолог Галина</h3>
+          <a class="tg-handle" href="https://t.me/tyulis_galina" target="_blank" rel="noopener noreferrer">@tyulis_galina</a>
+          <p>Я помогаю клиентам влюбиться в своё отражение в зеркале;<br />
+          Исцеляю заболевания кожи и ногтей;<br />
+          Делюсь секретами молодости, здоровья и красоты! 😉</p>
+          <a class="btn btn-primary" href="https://t.me/tyulis_galina" target="_blank" rel="noopener noreferrer">Открыть канал</a>
+        </article>
       </div>
     </section>
 
-    <!-- 20. Final CTA -->
-    <section class="section final" id="final">
-      <div class="final-bg" aria-hidden="true">
-        <img class="final-image" src="media/final.webp" alt="" loading="lazy" decoding="async" />
-        <div class="final-wash"></div>
-      </div>
-      <div class="final-content reveal">
-        <h2 class="brand-title">Карта психосоматики тела</h2>
-        <p>Тело — не враг. Оно подаёт сигналы. Если вы узнали себя на этой странице, не откладывайте этот разговор на потом.</p>
-        <a class="btn btn-primary btn-lg" href="#tariffs">Начать сейчас</a>
-      </div>
-    </section>
-
-    <!-- Tariffs -->
     <section class="section tariffs" id="tariffs">
       <div class="container">
         <div class="section-head reveal">
@@ -938,6 +820,78 @@
         </div>
       </div>
     </section>
+
+    <section class="section faq" id="faq">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <h2>Частые вопросы</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details open>
+            <summary>Можно ли проходить без психологического образования?</summary>
+            <p>Да. Курс написан простым языком для взрослых без специальной подготовки. Никаких учебников и чужого жаргона — только то, что можно применить к своей жизни с первого дня.</p>
+          </details>
+          <details>
+            <summary>Если врачи ничего не находят, а мне не легче?</summary>
+            <p>Курс как раз для таких ситуаций. Он не ставит диагнозы и не отменяет обследования. Он помогает увидеть то, что анализы часто не показывают: связь эмоций, стресса и самочувствия.</p>
+          </details>
+          <details>
+            <summary>Если у меня хроническое заболевание?</summary>
+            <p>Курс не заменяет лечение. Он помогает понять, какие факторы могут влиять на самочувствие, и выстроить более бережную заботу о себе — рядом с назначениями врача, а не вместо них.</p>
+          </details>
+          <details>
+            <summary>Сколько времени нужно в день?</summary>
+            <p>Около 45–70 минут: урок и запись в тетради. Практики короткие — их можно встроить в обычный вечер, не откладывая всё до отпуска.</p>
+          </details>
+          <details>
+            <summary>Это не эзотерика и не «все болезни от мыслей»?</summary>
+            <p>Нет. Никаких таблиц «обиделся — заболел печень» и поиска виноватых. Подход врача: связь стресса, эмоций и тела — без магии и без стыда.</p>
+          </details>
+          <details>
+            <summary>Курс заменяет врача?</summary>
+            <p>Нет. Это дополнение к медицинской помощи. Если тело подаёт сигналы — сначала к специалисту. Курс идёт рядом.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section org-faq" id="org">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <h2>Организационные вопросы</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details>
+            <summary>Если курс не подойдёт?</summary>
+            <p>Напишите в поддержку в течение 7 дней после оплаты — разберём ситуацию индивидуально.</p>
+          </details>
+          <details>
+            <summary>Когда откроется доступ?</summary>
+            <p>Сразу после оплаты. Письмо с доступом и инструкцией придёт на почту. Начинайте в удобный день: уроки открываются последовательно, в вашем темпе.</p>
+          </details>
+          <details>
+            <summary>Как проходит оплата?</summary>
+            <p>Безопасно онлайн. После оплаты вы получите письмо с доступом. Сохраните чек.</p>
+          </details>
+          <details>
+            <summary>Нужно ли проходить строго за 7 дней?</summary>
+            <p>Нет. Семь дней — это структура курса, а не жёсткий срок. Можно идти медленнее. Главное — не бросать тетрадь после первого урока.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final" id="final">
+      <div class="final-bg" aria-hidden="true">
+        <img class="final-image" src="media/final.webp" alt="" loading="lazy" decoding="async" />
+        <div class="final-wash"></div>
+      </div>
+      <div class="final-content reveal">
+        <h2 class="brand-title">Карта психосоматики тела</h2>
+        <p>Тело — не враг. Оно подаёт сигналы. Если вы узнали себя на этой странице, не откладывайте этот разговор на потом.</p>
+        <a class="btn btn-primary btn-lg" href="#tariffs">Начать сейчас</a>
+      </div>
+    </section>
   </main>
 
   <div class="pay-modal" id="pay-modal" hidden>
@@ -1057,6 +1011,14 @@
     </div>
   </footer>
 
-  <script src="script.js?v=13" defer></script>
+  <div class="rabbit-modal" data-rabbit-modal hidden>
+    <div class="rabbit-modal-backdrop" data-rabbit-close tabindex="-1"></div>
+    <div class="rabbit-modal-card" role="dialog" aria-modal="true" aria-labelledby="rabbit-modal-title">
+      <p class="rabbit-modal-title" id="rabbit-modal-title">Вы нашли моего кролика!</p>
+      <p>За это вам от меня скидка 5% на все тарифы курса</p>
+      <button class="btn btn-primary" type="button" data-rabbit-close>Спасибо</button>
+    </div>
+  </div>
+  <script src="script.js?v=17" defer></script>
 </body>
 </html>
